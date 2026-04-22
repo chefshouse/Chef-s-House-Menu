@@ -6,7 +6,17 @@
 <title>Chef's House Full Menu</title>
 
 <style>
-:root { --main:#ff7a00; --bg:#ffffff; --text:#000000; }
+:root {
+  --main:#ff7a00;
+  --bg:#ffffff;
+  --text:#000000;
+}
+
+body.dark {
+  --main:#cc5f00;   /* πιο σκούρο πορτοκαλί */
+  --bg:#121212;
+  --text:#ffffff;
+}
 body.dark { --bg:#121212; --text:#ffffff; }
 body.dark .footer {
   color: #bbb;
@@ -247,6 +257,12 @@ body.dark .icon-btn.insta {
 .header.scrolled {
   backdrop-filter: blur(10px);
   background: rgba(255,122,0,0.9);
+}
+ body.dark .delivery-box{
+  background: linear-gradient(45deg,#cc5f00,#a94e00);
+} 
+  body.dark .header {
+  background: var(--main);
 }
 </style>
 
