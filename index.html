@@ -362,6 +362,57 @@ body.dark .main-title::after{
   from { opacity:0; transform:translateY(10px); }
   to { opacity:1; transform:translateY(0); }
 }
+  .hero{
+  position: relative;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 10px 0;
+
+  background: url('food.jpg') center/cover no-repeat;
+}
+
+/* overlay για να φαίνεται το κείμενο */
+.hero::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.45);
+}
+
+/* content */
+.hero-content{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 10px;
+}
+
+/* title */
+.hero-content h1{
+  margin:0;
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+/* subtitle */
+.hero-content .subtitle{
+  margin-top:5px;
+  font-size:14px;
+  opacity:0.9;
+}
+
+/* DARK MODE λίγο πιο σκούρο overlay */
+body.dark .hero::after{
+  background: rgba(0,0,0,0.6);
+}
 </style>
 
 <script>
@@ -421,10 +472,14 @@ window.addEventListener("scroll", function() {
 
 
 <div class="container">
-<div class="main-title">
-  <h1>Chef’s House</h1>
-  <div class="subtitle">🍽️ Μενού / Menu</div>
+<div class="hero">
+  <div class="hero-content">
+    <h1>Chef’s House</h1>
+    <div class="subtitle">🍽️ Μενού / Menu</div>
+  </div>
 </div>
+
+  
 </div>
 <div class="delivery-box">
   <div class="delivery-title">🛵 Delivery</div>
