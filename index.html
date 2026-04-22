@@ -246,7 +246,19 @@ body.dark .icon-btn.insta {
 </style>
 
 <script>
-function toggleDark(){document.body.classList.toggle("dark")}
+function toggleDark(){
+  document.body.classList.toggle("dark")
+}
+
+window.addEventListener("scroll", function() {
+  const header = document.querySelector(".header");
+
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
 </script>
 </head>
 <body>
