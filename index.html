@@ -9,70 +9,100 @@
 :root{--bg:#0f0f0f;--card:#1a1a1a;--text:#fff;--accent:#ff7a00}
 body.light{--bg:#fff;--card:#f5f5f5;--text:#000}
 body{margin:0;font-family:Poppins;background:var(--bg);color:var(--text)}
-header{display:flex;justify-content:space-between;padding:15px;background:#000;position:sticky;top:0}
-header img{height:50px}
-.hero{height:35vh;background:url('hero.jpg') center/cover;display:flex;align-items:center;justify-content:center}
-.hero h1{background:#0008;padding:15px 25px;border-radius:20px}
-.categories{display:flex;overflow:auto;padding:10px;gap:10px;background:var(--bg);position:sticky;top:70px}
-.categories button{background:var(--card);border:none;padding:8px 12px;border-radius:20px;color:var(--text)}
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 15px;background:#000;position:sticky;top:0}
+header img{height:45px}
+.search{width:100%;padding:10px;border:none;border-radius:10px;margin:10px 0}
 .container{padding:15px}
-.section-title{margin-top:25px;border-left:4px solid var(--accent);padding-left:10px}
-.item{display:flex;gap:10px;align-items:center;background:var(--card);margin:8px 0;padding:10px;border-radius:12px}
-.item img{width:55px;height:55px;border-radius:10px;object-fit:cover}
-.item-info{flex:1}
-.badge{background:gold;color:black;font-size:10px;padding:2px 6px;border-radius:6px;margin-left:5px}
+.section{margin-top:20px}
+.section-title{cursor:pointer;border-left:4px solid var(--accent);padding-left:10px}
+.items{display:none}
+.item{display:flex;justify-content:space-between;background:var(--card);padding:10px;margin:5px 0;border-radius:10px}
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center}
+.hero img{width:120px;margin-bottom:10px}
+.hero p{opacity:0.8}
+.insta-btn{display:inline-block;margin-top:10px;padding:10px 15px;background:#E1306C;color:white;border-radius:20px;text-decoration:none;font-size:14px}
 .footer{text-align:center;padding:20px}
 </style>
 </head>
 <body>
+
 <header>
-<img src="logo.png">
+<img src="logo.png" alt="Chef's House">
 <div>
 <button onclick="toggleLang()">EN/GR</button>
 <button onclick="toggleMode()">🌙</button>
 </div>
 </header>
-<div class="hero"><h1>Chef's House</h1></div>
-<div class="categories">
-<button onclick="go('coffee')">☕</button>
-<button onclick="go('food')">🍔</button>
-<button onclick="go('pizza')">🍕</button>
-<button onclick="go('bougatsa')">🥧</button>
+
+<div class="hero">
+<img src="logo.png" alt="Chef's House Logo">
+<h1>Chef's House</h1>
+<p>📱 Scan & View Menu</p>
 </div>
+
 <div class="container">
+<input class="search" placeholder="🔍 Search..." onkeyup="searchMenu(this.value)">
 
-<h2 class="section-title">🔥 Best Sellers</h2>
-<div class="item"><img src="gyro.jpg"><div class="item-info" data-gr="Γύρος Κοτόπουλο" data-en="Chicken Gyro">Γύρος Κοτόπουλο <span class="badge">HOT</span></div><div>3,50€</div></div>
-<div class="item"><img src="freddo.jpg"><div class="item-info" data-gr="Φρέντο Εσπρέσο" data-en="Freddo Espresso">Φρέντο Εσπρέσο</div><div>2,20€</div></div>
+<!-- COFFEE -->
+<div class="section">
+<h2 class="section-title" onclick="toggleSection(this)">☕ Καφέδες</h2>
+<div class="items">
+<div class="item"><span data-gr="Ελληνικός Μονός" data-en="Greek Coffee Single">Ελληνικός Μονός</span><span>1,00€</span></div>
+<div class="item"><span data-gr="Ελληνικός Διπλός" data-en="Greek Coffee Double">Ελληνικός Διπλός</span><span>1,80€</span></div>
+<div class="item"><span data-gr="Φραπέ" data-en="Frappe">Φραπέ</span><span>2,00€</span></div>
+<div class="item"><span data-gr="Εσπρέσο" data-en="Espresso">Εσπρέσο</span><span>1,80€</span></div>
+<div class="item"><span data-gr="Καπουτσίνο" data-en="Cappuccino">Καπουτσίνο</span><span>2,20€</span></div>
+<div class="item"><span data-gr="Freddo Espresso" data-en="Freddo Espresso">Freddo Espresso</span><span>2,20€</span></div>
+</div>
+</div>
 
-<h2 id="coffee" class="section-title">☕ Καφέδες</h2>
-<div class="item"><img src="coffee.jpg"><div class="item-info" data-gr="Ελληνικός" data-en="Greek Coffee">Ελληνικός</div><div>1,00€</div></div>
-<div class="item"><img src="espresso.jpg"><div class="item-info" data-gr="Εσπρέσο" data-en="Espresso">Εσπρέσο</div><div>1,80€</div></div>
-<div class="item"><img src="cappuccino.jpg"><div class="item-info" data-gr="Καπουτσίνο" data-en="Cappuccino">Καπουτσίνο</div><div>2,20€</div></div>
+<!-- FOOD -->
+<div class="section">
+<h2 class="section-title" onclick="toggleSection(this)">🍔 Φαγητό</h2>
+<div class="items">
+<div class="item"><span data-gr="Γύρος Κοτόπουλο" data-en="Chicken Gyro">Γύρος Κοτόπουλο</span><span>3,50€</span></div>
+<div class="item"><span data-gr="Γύρος Μοσχαρίσιος" data-en="Beef Gyro">Γύρος Μοσχαρίσιος</span><span>3,80€</span></div>
+<div class="item"><span data-gr="Σουβλάκι Κοτόπουλο" data-en="Chicken Souvlaki">Σουβλάκι Κοτόπουλο</span><span>3,50€</span></div>
+<div class="item"><span data-gr="Μπιφτέκι" data-en="Burger Patty">Μπιφτέκι</span><span>4,00€</span></div>
+</div>
+</div>
 
-<h2 id="food" class="section-title">🍔 Φαγητό</h2>
-<div class="item"><img src="toast.jpg"><div class="item-info" data-gr="Τόστ" data-en="Toast">Τόστ</div><div>2,00€</div></div>
-<div class="item"><img src="gyro.jpg"><div class="item-info" data-gr="Γύρος Μοσχαρίσιος" data-en="Beef Gyro">Γύρος Μοσχαρίσιος</div><div>3,80€</div></div>
-<div class="item"><img src="souvlaki.jpg"><div class="item-info" data-gr="Σουβλάκι Κοτόπουλο" data-en="Chicken Souvlaki">Σουβλάκι Κοτόπουλο</div><div>3,50€</div></div>
+<!-- PIZZA -->
+<div class="section">
+<h2 class="section-title" onclick="toggleSection(this)">🍕 Πίτσες</h2>
+<div class="items">
+<div class="item"><span data-gr="Μαργαρίτα" data-en="Margherita">Μαργαρίτα</span><span>6,00€</span></div>
+<div class="item"><span data-gr="Special" data-en="Special">Special</span><span>7,00€</span></div>
+<div class="item"><span data-gr="Χωριάτικη" data-en="Greek Style">Χωριάτικη</span><span>6,50€</span></div>
+</div>
+</div>
 
-<h2 id="pizza" class="section-title">🍕 Πίτσες</h2>
-<div class="item"><img src="pizza.jpg"><div class="item-info" data-gr="Μαργαρίτα" data-en="Margherita">Μαργαρίτα</div><div>6,00€</div></div>
-<div class="item"><img src="pizza2.jpg"><div class="item-info" data-gr="Special" data-en="Special">Special</div><div>7,00€</div></div>
-
-<h2 id="bougatsa" class="section-title">🥧 Μπουγάτσες</h2>
-<div class="item"><img src="bougatsa.jpg"><div class="item-info" data-gr="Μπουγάτσα με κρέμα" data-en="Custard Bougatsa">Μπουγάτσα με κρέμα</div><div>3,00€</div></div>
-<div class="item"><img src="bougatsa2.jpg"><div class="item-info" data-gr="Μπουγάτσα με τυρί" data-en="Cheese Bougatsa">Μπουγάτσα με τυρί</div><div>3,00€</div></div>
+<!-- BOUGATSA -->
+<div class="section">
+<h2 class="section-title" onclick="toggleSection(this)">🥧 Μπουγάτσες</h2>
+<div class="items">
+<div class="item"><span data-gr="Μπουγάτσα Κρέμα" data-en="Custard Bougatsa">Μπουγάτσα Κρέμα</span><span>3,00€</span></div>
+<div class="item"><span data-gr="Μπουγάτσα Τυρί" data-en="Cheese Bougatsa">Μπουγάτσα Τυρί</span><span>3,00€</span></div>
+<div class="item"><span data-gr="Μπουγάτσα Κιμά" data-en="Minced Meat Bougatsa">Μπουγάτσα Κιμά</span><span>3,00€</span></div>
+</div>
+</div>
 
 </div>
+
 <div class="footer">
 <p>📍 Κοπτερό Ροδόπης</p>
 <p>📶 WiFi: Chef’s House | 19591959</p>
+<a href="https://www.instagram.com/chefs.house__" target="_blank" class="insta-btn">📷 Follow us on Instagram</a>
+<p>👉 Follow us for offers & new dishes!</p>
 </div>
+
 <script>
 function toggleMode(){document.body.classList.toggle('light')}
-function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function toggleSection(el){let items=el.nextElementSibling;items.style.display=items.style.display==='block'?'none':'block'}
 let gr=true;
-function toggleLang(){gr=!gr;document.querySelectorAll('.item-info').forEach(el=>{el.innerText=gr?el.dataset.gr:el.dataset.en})}
+function toggleLang(){gr=!gr;document.querySelectorAll('[data-gr]').forEach(el=>{el.innerText=gr?el.dataset.gr:el.dataset.en})}
+function searchMenu(q){q=q.toLowerCase();document.querySelectorAll('.item').forEach(i=>{let t=i.innerText.toLowerCase();i.style.display=t.includes(q)?'flex':'none'})}
 </script>
+
 </body>
 </html>
