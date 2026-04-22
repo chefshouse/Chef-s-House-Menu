@@ -37,17 +37,15 @@ function toggleDark(){document.body.classList.toggle("dark")}
 <body>
 
 <header>
-<img src="logo.png">
-<button onclick="toggleDark()">🌙</button>
-<div style="display:flex;gap:10px;">
-<button onclick="toggleDark()">🌙</button>
-<a href="tel:2534024382" style="background:white;color:#ff7a00;padding:6px 10px;border-radius:6px;text-decoration:none;font-weight:bold;">📞 Call</a>
-</div>
-<div style="display:flex;gap:10px;">
-<button onclick="toggleDark()">🌙</button>
-<a href="tel:2534024382" style="background:white;color:#ff7a00;padding:6px 10px;border-radius:6px;text-decoration:none;font-weight:bold;">📞 Call</a>
-<a href="https://share.google/7BI1b0BSGykwcFpsP" target="_blank" style="background:white;color:#ff7a00;padding:6px 10px;border-radius:6px;text-decoration:none;font-weight:bold;">📍 Map</a>
-</div>
+<header class="header">
+  <img src="logo.png" class="logo">
+
+  <div class="actions">
+    <button onclick="toggleDark()" class="icon-btn">🌙</button>
+    <a href="tel:2534024382" class="icon-btn">📞</a>
+    <a href="https://share.google/7BI1b0BSGykwcFpsP" target="_blank" class="icon-btn">📍</a>
+  </div>
+</header>
 </header>
 
 <div class="container">
