@@ -83,6 +83,57 @@ h2{border-bottom:2px solid var(--main);padding-bottom:5px;margin-top:30px}
   border-top: 1px solid #ddd;
   margin-top: 30px;
 }
+  .delivery-box{
+  margin-top:15px;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+  background: linear-gradient(45deg,#ff7a00,#ff9a3c);
+  color:#fff;
+  box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+.delivery-title{
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+.delivery-hours{
+  font-size:14px;
+  margin-bottom:8px;
+  opacity:0.9;
+}
+
+.delivery-min{
+  font-size:15px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.delivery-list div{
+  display:flex;
+  justify-content:space-between;
+  padding:6px 10px;
+  margin:4px 0;
+  background: rgba(255,255,255,0.15);
+  border-radius:8px;
+  font-size:14px;
+}
+
+.delivery-list span{
+  font-weight:bold;
+}
+
+/* DARK MODE βελτίωση */
+body.dark .delivery-box{
+  background: linear-gradient(45deg,#ff7a00,#cc5f00);
+  box-shadow:0 3px 10px rgba(0,0,0,0.6);
+}
+
+body.dark .delivery-list div{
+  background: rgba(0,0,0,0.25);
+}
 </style>
 
 <script>
