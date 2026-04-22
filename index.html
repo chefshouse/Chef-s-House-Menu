@@ -219,6 +219,30 @@ body.dark .icon-btn.insta {
   border: 2px solid #d62976;
   color: #d62976;
 }
+/* Smooth transition */
+.header {
+  transition: all 0.3s ease;
+}
+
+/* SLIM HEADER όταν κάνεις scroll */
+.header.scrolled {
+  padding: 4px 10px;
+}
+
+.header.scrolled .logo {
+  height: 40px;
+}
+
+.header.scrolled .icon-btn {
+  width: 32px;
+  height: 32px;
+}
+
+/* πιο μικρά icons */
+.header.scrolled .icon-btn svg {
+  width: 16px;
+  height: 16px;
+}
 </style>
 
 <script>
