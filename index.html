@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chef's House Premium</title>
+<title>Chef's House Full Menu</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0f0f0f;--card:#1a1a1a;--text:#fff;--accent:#ff7a00}
 body.light{--bg:#fff;--card:#f5f5f5;--text:#000}
 body{margin:0;font-family:Poppins;background:var(--bg);color:var(--text)}
-header{display:flex;justify-content:space-between;align-items:center;padding:10px 15px;background:#000;position:sticky;top:0}
+header{display:flex;justify-content:space-between;padding:15px;background:#000;position:sticky;top:0}
 header img{height:45px}
 .search{width:100%;padding:10px;border:none;border-radius:10px;margin:10px 0}
 .container{padding:15px}
@@ -17,53 +17,73 @@ header img{height:45px}
 .section-title{cursor:pointer;border-left:4px solid var(--accent);padding-left:10px}
 .items{display:none}
 .item{display:flex;justify-content:space-between;background:var(--card);padding:10px;margin:5px 0;border-radius:10px}
-.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center}
-.hero img{width:120px;margin-bottom:10px}
-.hero p{opacity:0.8}
-.insta-btn{display:inline-block;margin-top:10px;padding:10px 15px;background:#E1306C;color:white;border-radius:20px;text-decoration:none;font-size:14px}
 .footer{text-align:center;padding:20px}
 </style>
 </head>
 <body>
-
 <header>
-<img src="logo.png" alt="Chef's House">
+<img src="logo.png">
 <div>
 <button onclick="toggleLang()">EN/GR</button>
 <button onclick="toggleMode()">🌙</button>
 </div>
 </header>
-
-<div class="hero">
-<img src="logo.png" alt="Chef's House Logo">
-<h1>Chef's House</h1>
-<p>📱 Scan & View Menu</p>
-</div>
-
 <div class="container">
 <input class="search" placeholder="🔍 Search..." onkeyup="searchMenu(this.value)">
 
-<!-- COFFEE -->
+<!-- COFFEES -->
 <div class="section">
 <h2 class="section-title" onclick="toggleSection(this)">☕ Καφέδες</h2>
 <div class="items">
 <div class="item"><span data-gr="Ελληνικός Μονός" data-en="Greek Coffee Single">Ελληνικός Μονός</span><span>1,00€</span></div>
 <div class="item"><span data-gr="Ελληνικός Διπλός" data-en="Greek Coffee Double">Ελληνικός Διπλός</span><span>1,80€</span></div>
 <div class="item"><span data-gr="Φραπέ" data-en="Frappe">Φραπέ</span><span>2,00€</span></div>
-<div class="item"><span data-gr="Εσπρέσο" data-en="Espresso">Εσπρέσο</span><span>1,80€</span></div>
-<div class="item"><span data-gr="Καπουτσίνο" data-en="Cappuccino">Καπουτσίνο</span><span>2,20€</span></div>
+<div class="item"><span data-gr="Εσπρέσο Μονός" data-en="Espresso Single">Εσπρέσο Μονός</span><span>1,80€</span></div>
+<div class="item"><span data-gr="Εσπρέσο Διπλός" data-en="Espresso Double">Εσπρέσο Διπλός</span><span>2,20€</span></div>
 <div class="item"><span data-gr="Freddo Espresso" data-en="Freddo Espresso">Freddo Espresso</span><span>2,20€</span></div>
+<div class="item"><span data-gr="Freddo Cappuccino" data-en="Freddo Cappuccino">Freddo Cappuccino</span><span>2,40€</span></div>
+<div class="item"><span data-gr="Cappuccino" data-en="Cappuccino">Cappuccino</span><span>2,20€</span></div>
+<div class="item"><span data-gr="Iced Latte" data-en="Iced Latte">Iced Latte</span><span>2,70€</span></div>
+</div>
+</div>
+
+<!-- DRINKS -->
+<div class="section">
+<h2 class="section-title" onclick="toggleSection(this)">🥤 Αναψυκτικά & Χυμοί</h2>
+<div class="items">
+<div class="item"><span>Coca-Cola</span><span>1,50€</span></div>
+<div class="item"><span>Coca-Cola Zero</span><span>1,50€</span></div>
+<div class="item"><span>Fanta</span><span>1,50€</span></div>
+<div class="item"><span>Sprite</span><span>1,50€</span></div>
+<div class="item"><span>Schweppes</span><span>1,50€</span></div>
+<div class="item"><span>Lipton Ice Tea</span><span>1,50€</span></div>
+<div class="item"><span>Amita</span><span>1,50€</span></div>
+<div class="item"><span>Φυσικός Χυμός</span><span>1,80€</span></div>
 </div>
 </div>
 
 <!-- FOOD -->
 <div class="section">
-<h2 class="section-title" onclick="toggleSection(this)">🍔 Φαγητό</h2>
+<h2 class="section-title" onclick="toggleSection(this)">🍔 Τυλιχτά</h2>
 <div class="items">
-<div class="item"><span data-gr="Γύρος Κοτόπουλο" data-en="Chicken Gyro">Γύρος Κοτόπουλο</span><span>3,50€</span></div>
-<div class="item"><span data-gr="Γύρος Μοσχαρίσιος" data-en="Beef Gyro">Γύρος Μοσχαρίσιος</span><span>3,80€</span></div>
-<div class="item"><span data-gr="Σουβλάκι Κοτόπουλο" data-en="Chicken Souvlaki">Σουβλάκι Κοτόπουλο</span><span>3,50€</span></div>
-<div class="item"><span data-gr="Μπιφτέκι" data-en="Burger Patty">Μπιφτέκι</span><span>4,00€</span></div>
+<div class="item"><span>Γύρος Κοτόπουλο</span><span>3,50€</span></div>
+<div class="item"><span>Γύρος Μοσχαρίσιο</span><span>3,80€</span></div>
+<div class="item"><span>Σουβλάκι Κοτόπουλο</span><span>3,50€</span></div>
+<div class="item"><span>Σουβλάκι Μοσχαρίσιο</span><span>4,00€</span></div>
+<div class="item"><span>Λουκάνικο</span><span>3,50€</span></div>
+<div class="item"><span>Μπιφτέκι Γεμιστό</span><span>4,00€</span></div>
+</div>
+</div>
+
+<!-- PORTIONS -->
+<div class="section">
+<h2 class="section-title" onclick="toggleSection(this)">🍽 Μερίδες</h2>
+<div class="items">
+<div class="item"><span>Γύρος Κοτόπουλο Μερίδα</span><span>7,00€</span></div>
+<div class="item"><span>Σουβλάκι Κοτόπουλο Μερίδα</span><span>7,00€</span></div>
+<div class="item"><span>Σουτζουκάκια Μερίδα</span><span>7,00€</span></div>
+<div class="item"><span>Μπιφτέκι Μερίδα</span><span>7,50€</span></div>
+<div class="item"><span>Πατάτες Τηγανητές</span><span>3,00€</span></div>
 </div>
 </div>
 
@@ -71,9 +91,11 @@ header img{height:45px}
 <div class="section">
 <h2 class="section-title" onclick="toggleSection(this)">🍕 Πίτσες</h2>
 <div class="items">
-<div class="item"><span data-gr="Μαργαρίτα" data-en="Margherita">Μαργαρίτα</span><span>6,00€</span></div>
-<div class="item"><span data-gr="Special" data-en="Special">Special</span><span>7,00€</span></div>
-<div class="item"><span data-gr="Χωριάτικη" data-en="Greek Style">Χωριάτικη</span><span>6,50€</span></div>
+<div class="item"><span>Ατομική Μαργαρίτα</span><span>3,00€</span></div>
+<div class="item"><span>Μεσαία Μαργαρίτα</span><span>6,00€</span></div>
+<div class="item"><span>Γίγας Μαργαρίτα</span><span>11,00€</span></div>
+<div class="item"><span>Special</span><span>7,00€</span></div>
+<div class="item"><span>Χωριάτικη</span><span>6,50€</span></div>
 </div>
 </div>
 
@@ -81,10 +103,28 @@ header img{height:45px}
 <div class="section">
 <h2 class="section-title" onclick="toggleSection(this)">🥧 Μπουγάτσες</h2>
 <div class="items">
-<div class="item"><span data-gr="Μπουγάτσα Κρέμα" data-en="Custard Bougatsa">Μπουγάτσα Κρέμα</span><span>3,00€</span></div>
-<div class="item"><span data-gr="Μπουγάτσα Τυρί" data-en="Cheese Bougatsa">Μπουγάτσα Τυρί</span><span>3,00€</span></div>
-<div class="item"><span data-gr="Μπουγάτσα Κιμά" data-en="Minced Meat Bougatsa">Μπουγάτσα Κιμά</span><span>3,00€</span></div>
+<div class="item"><span>Μπουγάτσα Τυρί</span><span>3,00€</span></div>
+<div class="item"><span>Μπουγάτσα Κρέμα</span><span>3,00€</span></div>
+<div class="item"><span>Μπουγάτσα Κιμά</span><span>3,00€</span></div>
+<div class="item"><span>Μπουγάτσα Κοτόπουλο</span><span>3,00€</span></div>
+<div class="item"><span>Μπουγάτσα Κασέρι</span><span>3,00€</span></div>
 </div>
+</div>
+
+<!-- BEERS -->
+<div class="section">
+<h2 class="section-title" onclick="toggleSection(this)">🍺 Μπύρες</h2>
+<div class="items">
+<div class="item"><span>Amstel</span><span>1,50€</span></div>
+<div class="item"><span>Heineken</span><span>1,80€</span></div>
+<div class="item"><span>Vergina</span><span>1,20€</span></div>
+<div class="item"><span>Corona</span><span>2,80€</span></div>
+</div>
+</div>
+
+<div style="text-align:center;margin-top:30px">
+<p>📱 Scan για Μενού</p>
+<img src="qr.png" style="width:150px">
 </div>
 
 </div>
@@ -92,8 +132,7 @@ header img{height:45px}
 <div class="footer">
 <p>📍 Κοπτερό Ροδόπης</p>
 <p>📶 WiFi: Chef’s House | 19591959</p>
-<a href="https://www.instagram.com/chefs.house__" target="_blank" class="insta-btn">📷 Follow us on Instagram</a>
-<p>👉 Follow us for offers & new dishes!</p>
+<a href="https://www.instagram.com/chefs.house__" target="_blank">📷 Instagram</a>
 </div>
 
 <script>
@@ -103,6 +142,5 @@ let gr=true;
 function toggleLang(){gr=!gr;document.querySelectorAll('[data-gr]').forEach(el=>{el.innerText=gr?el.dataset.gr:el.dataset.en})}
 function searchMenu(q){q=q.toLowerCase();document.querySelectorAll('.item').forEach(i=>{let t=i.innerText.toLowerCase();i.style.display=t.includes(q)?'flex':'none'})}
 </script>
-
 </body>
 </html>
