@@ -107,20 +107,22 @@ function toggleDark(){document.body.classList.toggle("dark")}
 
 <h1>CHEF'S HOUSE</h1>
 <h1>Μενού / Menu</h1>
-<div style="
-text-align:center;
-margin-top:15px;
-background:linear-gradient(45deg,#ff7a00,#ff9a3c);
-color:white;
-padding:12px;
-border-radius:10px;
-font-weight:bold;
-box-shadow:0 2px 6px rgba(0,0,0,0.2);
-">
-🛵 Delivery διαθέσιμο  
-💰 Ελάχιστη παραγγελία: -Εντός Κοπτερού 5€
-                        -1km έως 5km 15€
-                        -5km έως 15km 25€
+<div class="delivery-box">
+  <div class="delivery-title">🛵 Delivery</div>
+
+  <div class="delivery-hours">
+    ⏰ 12:00 – 00:00
+  </div>
+
+  <div class="delivery-min">
+    💰 Ελάχιστη Παραγγελία
+  </div>
+
+  <div class="delivery-list">
+    <div>📍 Εντός Κοπτερού <span>5€</span></div>
+    <div>📍 1km – 5km <span>15€</span></div>
+    <div>📍 5km – 15km <span>25€</span></div>
+  </div>
 </div>
 
 
