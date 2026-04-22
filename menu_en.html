@@ -1,193 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
- <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chef's House Full Detailed Menu</title>
+<title>Chef's House Full Menu</title>
+
 <style>
-<body>  <header>
-body{font-family:Arial;margin:0;background:#FFFFFF;color:#000000}
-.container{padding:15px}
-h2{border-bottom:2px solid #ff7a00;padding-bottom:5px;margin-top:25px}
-.item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #333;font-size:14px}
+:root { --main:#ff7a00; --bg:#ffffff; --text:#000000; }
+body.dark { --bg:#121212; --text:#ffffff; }
+body{font-family:Arial;margin:0;background:var(--bg);color:var(--text);transition:.3s}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 15px;background:var(--main);color:#fff}
+header img{height:55px}
+button{background:#fff;border:none;padding:6px 10px;border-radius:6px;cursor:pointer}
+.container{padding:15px;max-width:1000px;margin:auto}
+h1{text-align:center;margin:5px 0}
+h2{border-bottom:2px solid var(--main);padding-bottom:5px;margin-top:30px}
+.item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #888;font-size:15px}
+.item span:last-child{font-weight:bold;color:var(--main)}
+.note{font-size:12px;opacity:.7;margin-top:5px}
+.lang{opacity:.7;font-size:13px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:10px}
+.card{border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);background:var(--bg)}
+.card img{width:100%;height:140px;object-fit:cover}
+.card-body{padding:10px}
+.card-title{font-weight:bold}
+
+.qr{text-align:center;margin-top:30px}
+.qr img{width:150px}
+</style>
+
+<script>
+function toggleDark(){document.body.classList.toggle("dark")}
+</script>
 </head>
-<nav><a href="index.html">Ελληνικά</a></nav>
-   </header>
-  <div class="container">
-    <h1 class="site-title">CHEF'S HOUSE</h1>
-    <h1>Menu</h1>
-    <h2>☕ Καφέδες</h2>
-<div class="item"><span>Ελληνικός (Μόνος)</span><span>1,00€</span></div>
-<div class="item"><span>Ελληνικός (Διπλός)</span><span>1,80€</span></div>
-<div class="item"><span>Φραπέ / ΝεςΚαφέ</span><span>2,00€</span></div>
-<div class="item"><span>Εσπρέσο (Μονός)</span><span>1,80€</span></div>
-<div class="item"><span>Εσπρέσο (Διπλός)</span><span>2,20€</span></div>
-<div class="item"><span>Αμερικάνο (Μονός)</span><span>1,80€</span></div>
-<div class="item"><span>Αμερικάνο (Διπλός)</span><span>2,20€</span></div>
+<body>
+
+<header>
+<img src="logo.png">
+<button onclick="toggleDark()">🌙</button>
+<div style="display:flex;gap:10px;">
+<button onclick="toggleDark()">🌙</button>
+<a href="tel:2534024382" style="background:white;color:#ff7a00;padding:6px 10px;border-radius:6px;text-decoration:none;font-weight:bold;">📞 Call</a>
+</div>
+<div style="display:flex;gap:10px;">
+<button onclick="toggleDark()">🌙</button>
+<a href="tel:2534024382" style="background:white;color:#ff7a00;padding:6px 10px;border-radius:6px;text-decoration:none;font-weight:bold;">📞 Call</a>
+<a href="https://share.google/7BI1b0BSGykwcFpsP" target="_blank" style="background:white;color:#ff7a00;padding:6px 10px;border-radius:6px;text-decoration:none;font-weight:bold;">📍 Map</a>
+</div>
+</header>
+
+<div class="container">
+
+<h1>CHEF'S HOUSE</h1>
+<h1>Μενού / Menu</h1>
+<div style="text-align:center;margin-top:10px;background:#eaffea;color:#0a7a0a;padding:8px;border-radius:8px;font-weight:bold;">🛵 Delivery 12:00 – 00:00 / Διαθέσιμο Delivery 12:00 – 00:00</div>
+
+<h2>⭐ Best Sellers</h2>
+<div class="grid">
+  <div class="card"><img src="gyro.jpg"><div class="card-body"><div class="card-title">Γύρος Κοτόπουλο / Chicken Gyro</div><div>3,50€</div></div></div>
+  <div class="card"><img src="burger.jpg"><div class="card-body"><div class="card-title">Chef's Burger</div><div>6,00€</div></div></div>
+  <div class="card"><img src="bougatsa.jpg"><div class="card-body"><div class="card-title">Μπουγάτσα Κρέμα / Cream Bougatsa</div><div>3,00€</div></div></div>
+  <div class="card"><img src="freddo.jpg"><div class="card-body"><div class="card-title">Freddo Espresso</div><div>2,20€</div></div></div>
+</div>
+
+<h2>☕ Καφέδες / Coffee</h2>
+<div class="item"><span>Ελληνικός Μονός / Greek Coffee Single</span><span>1,00€</span></div>
+<div class="item"><span>Ελληνικός Διπλός / Double Greek</span><span>1,80€</span></div>
+<div class="item"><span>Φραπέ / Frappe</span><span>2,00€</span></div>
+<div class="item"><span>Εσπρέσο / Espresso</span><span>1,80€</span></div>
+<div class="item"><span>Διπλός Εσπρέσο / Double Espresso</span><span>2,20€</span></div>
 <div class="item"><span>Freddo Espresso</span><span>2,20€</span></div>
-<div class="item"><span>Cappuccino (Μονός)</span><span>2,20€</span></div>
-<div class="item"><span>Cappuccino (Διπλός)</span><span>2,70€</span></div>
+<div class="item"><span>Cappuccino</span><span>2,20€</span></div>
 <div class="item"><span>Freddo Cappuccino</span><span>2,40€</span></div>
 <div class="item"><span>Iced Latte</span><span>2,70€</span></div>
-<div class="item"><span>Extra δόση espresso</span><span>+0,50€</span></div>
-<div class="item"><span>Σαντιγύ</span><span>+0,50€</span></div>
 
-<h2>🍫 Ροφήματα</h2>
-<div class="item"><span>Ζεστή Σοκολάτα</span><span>2,20€</span></div>
-<div class="item"><span>Κρύα Σοκολάτα</span><span>2,20€</span></div>
-<div class="item"><span>Mochachino</span><span>2,70€</span></div>
-<div class="item"><span>Τσάι</span><span>1,00€</span></div>
+<h2>🥤 Αναψυκτικά / Soft Drinks</h2>
+<div class="item"><span>Coca-Cola</span><span>1,50€</span></div>
+<div class="item"><span>Fanta</span><span>1,50€</span></div>
+<div class="item"><span>Sprite</span><span>1,50€</span></div>
 
-<h2>🥛 Γάλατα & Κακάο</h2>
-<div class="item"><span>Κακάο 250ml</span><span>1,00€</span></div>
-<div class="item"><span>Κακάο 500ml</span><span>1,50€</span></div>
-<div class="item"><span>Κακάο Zero</span><span>1,00€</span></div>
+<h2>🌯 Τυλιχτά / Wraps</h2>
+<div class="item"><span>Γύρος Κοτόπουλο / Chicken Gyro</span><span>3,50€</span></div>
+<div class="item"><span>Γύρος Μοσχαρίσιος / Beef Gyro</span><span>3,80€</span></div>
+<div class="item"><span>Σουβλάκι Κοτόπουλο / Chicken Souvlaki</span><span>3,50€</span></div>
+<div class="item"><span>Λουκάνικο / Sausage</span><span>3,50€</span></div>
+<div class="note">+ Sauce 0,20€</div>
 
-<h2>🥤 Αναψυκτικά</h2>
-<div class="item"><span>Coca-Cola 330ml</span><span>1,50€</span></div>
-<div class="item"><span>Coca-Cola Zero 330ml</span><span>1,50€</span></div>
-<div class="item"><span>Fanta 330ml</span><span>1,50€</span></div>
-<div class="item"><span>Sprite 330ml</span><span>1,50€</span></div>
-<div class="item"><span>Schweppes (Soda/Pink/Lemon)</span><span>1,50€</span></div>
-<div class="item"><span>Lipton Ice Tea (Λεμόνι/Ροδάκινο/Green)</span><span>1,50€</span></div>
-
-<h2>🍹 Χυμοί</h2>
-<div class="item"><span>Amita</span><span>1,50€</span></div>
-<div class="item"><span>Motion</span><span>1,80€</span></div>
-<div class="item"><span>Φυσικός Χυμός Πορτοκάλι</span><span>1,80€</span></div>
-
-<h2>🍺 Μπύρες</h2>
-<div class="item"><span>Corona 330ml</span><span>2,80€</span></div>
-<div class="item"><span>ΑΛΦΑ 330ml</span><span>1,50€</span></div>
-<div class="item"><span>ΑΛΦΑ 500ml</span><span>2,50€</span></div>
-<div class="item"><span>Vergina 330ml</span><span>1,20€</span></div>
-<div class="item"><span>Vergina 500ml</span><span>2,00€</span></div>
-<div class="item"><span>Heineken 330ml</span><span>1,80€</span></div>
-<div class="item"><span>Heineken 500ml</span><span>2,80€</span></div>
-<div class="item"><span>Amstel 330ml</span><span>1,50€</span></div>
-<div class="item"><span>Amstel 500ml</span><span>2,50€</span></div>
-
-<h2>🍷 Οίνοι & Τσίπουρο</h2>
-<div class="item"><span>Τσίπουρο 200ml</span><span>4,00€</span></div>
-<div class="item"><span>Εωθινών 200ml</span><span>7,50€</span></div>
-<div class="item"><span>Ηδωνικό 200ml</span><span>8,00€</span></div>
-<div class="item"><span>Εβρίτικο 200ml</span><span>7,00€</span></div>
-<div class="item"><span>Κρασί Λευκό 500ml</span><span>4,00€</span></div>
-<div class="item"><span>Κρασί Ερυθρό 500ml</span><span>4,00€</span></div>
-<div class="item"><span>Κρασί Ημίγλυκο 500ml</span><span>4,00€</span></div>
-<div class="item"><span>Ρετσίνα Μαλαματίνα</span><span>2,50€</span></div>
-
-<h2>🌯 Τυλιχτά</h2>
-<div class="item"><span>Τόστ Τυρί</span><span>2,00€</span></div>
-<div class="item"><span>Τόστ Τυρί-Σαλάμι/Γαλοπούλα</span><span>2,50€</span></div>
-<div class="item"><span>Τόστ Τυρί-Λουκάνικο</span><span>2,50€</span></div>
-<div class="item"><span>Γύρος Κοτόπουλο</span><span>3,50€</span></div>
-<div class="item"><span>Γύρος Μοσχαρίσιο</span><span>3,80€</span></div>
-<div class="item"><span>Σουτζουκάκια</span><span>3,80€</span></div>
-<div class="item"><span>Σουβλάκι Κοτόπουλο</span><span>3,50€</span></div>
-<div class="item"><span>Λουκάνικο</span><span>3,50€</span></div>
-<div class="item"><span>Μπιφτέκι Γεμιστό</span><span>4,00€</span></div>
-<div class="item"><span>Σουβλάκι Μοσχαρίσιο</span><span>4,00€</span></div>
-<div class="item"><span>Κάθε αλοιφή</span><span>0,20€</span></div> 
-
-<h2>🥙 Λαχματζούν</h2>
-<div class="item"><span>Γύρος Κοτόπουλο</span><span>4,00€</span></div>
-<div class="item"><span>Γύρος Μοσχαρίσιος</span><span>4,50€</span></div>
-<div class="item"><span>Με ντομάτα,κρεμμύδι,μαρούλι</span><span>2,50€</span></div>
-<div class="item"><span>Κάθε αλοιφή</span><span>0,20€</span></div>
-
-<h2>🥙 Σκεπαστές</h2>
-<div class="item"><span>Γύρος Κοτόπουλο(Ντομάτα, Μαρούλι, Chef's Sauce)</span><span>6,00€</span></div>
-<div class="item"><span>Γύρος Μοσχαρίσιος(Ντομάτα, Μαρούλι, Chef's Sauce)</span><span>6,50€</span></div>
-<div class="item"><span>Σουτζουκάκια(Ντομάτα, Μαρούλι, Chef's Sauce)</span><span>6,50€</span></div>
-<div class="item"><span>Σουβλάκι Κοτόπουλο(Ντομάτα, Μαρούλι, Chef's Sauce)</span><span>6,00€</span></div>
-<div class="item"><span>Λουκάνικο(Ντομάτα, Μαρούλι, Chef's Sauce)</span><span>6,00€</span></div>
-<div class="item"><span>Κάθε αλοιφή</span><span>0,20€</span></div>
-<div class="item"><span>Συνοδεύονται με πατάτες τηγανιτές</span><span></span></div>
-
-<h2>🥙 Πίτα Κλαμπ</h2>
-<div class="item"><span>Γύρος Κοτόπουλο(Μαρούλι, Ντομάτα, Μαγιονέζα)</span><span>7,50€</span></div>
-<div class="item"><span>Γύρος Μοσχαρίσιος(Μαρούλι, Ντομάτα, Μαγιονέζα)</span><span>8,00€</span></div>
-<div class="item"><span>Σουτζουκάκια(Μαρούλι, Ντομάτα, Μαγιονέζα)</span><span>8,00€</span></div>
-<div class="item"><span>Σουβλάκι Κοτόπουλο(Μαρούλι, Ντομάτα, Μαγιονέζα)</span><span>7,50€</span></div>
-<div class="item"><span>Λουκάνικο(Μαρούλι, Ντομάτα, Μαγιονέζα)</span><span>7,50€</span></div>
-<div class="item"><span>Κάθε αλοιφή</span><span>0,20€</span></div>
-<div class="item"><span>Συνοδεύονται με πατάτες τηγανιτές</span><span></span></div>
+<h2>🥙 Σκεπαστές / Covered Wraps</h2>
+<div class="item"><span>Γύρος Κοτόπουλο</span><span>6,00€</span></div>
+<div class="item"><span>Γύρος Μοσχαρίσιος</span><span>6,50€</span></div>
+<div class="note">Με πατάτες / With fries</div>
 
 <h2>🍔 Burger</h2>
-<div class="item"><span>Hamburger(Μπιφτέκι, Ντομάτα, Κρεμμύδι, Κέτσαπ, Μουστάρδα)</span><span>4,50€</span></div>
-<div class="item"><span>Cheeseburger(Μπιφτέκι, Τσένταρ, Πίκλες, Ντομάτα, Κέτσαπ, Μουστάρδα, Chef's Sauce)</span><span>5,00€</span></div>
-<div class="item"><span>Chef's Burger(Μπιφτέκι, Διπλό Τσένταρ, Καραμελωμένα Κρεμμύδια, Πίκλες, Ντομάτα, Μαρούλι, BBQ Sauce, Chef's Sauce)</span><span>6,00€</span></div>
-<div class="item"><span>Συνοδεύονται με πατάτες τηγανιτές και κέτσαπ</span><span></span></div>
+<div class="item"><span>Hamburger</span><span>4,50€</span></div>
+<div class="item"><span>Cheeseburger</span><span>5,00€</span></div>
+<div class="item"><span>Chef's Burger</span><span>6,00€</span></div>
 
 <h2>🥪 Club Sandwich</h2>
-<div class="item"><span>Γαλοπούλα(Τυρί, Γαλοπούλα, Ντομάτα, Μαρούλι, Μαγιονέζα)</span><span>4,00€</span></div>
-<div class="item"><span>Κοτόπουλο(Τυρί, Γαλοπούλα, Φιλέτο Κοτόπουλο, Ντομάτα, Μαρούλι, Μαγιονέζα)</span><span>4,50€</span></div>
-<div class="item"><span>Συνοδεύονται με πατάτες τηγανιτές</span><span></span></div>
+<div class="item"><span>Γαλοπούλα / Turkey</span><span>4,00€</span></div>
+<div class="item"><span>Κοτόπουλο / Chicken</span><span>4,50€</span></div>
 
-<h2>🍽 Μερίδες</h2>
-<div class="item"><span>Γύρος Μοσχαρίσιος(Ντομάτα, Κρεμμύδι, Μαρούλι, Πίτα)</span><span>7,50€</span></div> 
-<div class="item"><span>Γύρος Κοτόπουλο(Ντομάτα, Κρεμμύδι, Μαρούλι, Πίτα)</span><span>7,00€</span></div> 
-<div class="item"><span>Σουτζουκάκια(Ντομάτα, Κρεμμύδι, Μαρούλι, Πίτα)</span><span>7,00€</span></div>
-<div class="item"><span>Σουβλάκι Κοτόπουλο(Ντομάτα, Κρεμμύδι, Μαρούλι, Πίτα)</span><span>7,00€</span></div>
-<div class="item"><span>Λουκάνικο(Ντομάτα, Κρεμμύδι, Μαρούλι, Πίτα)</span><span>7,00€</span></div>
-<div class="item"><span>Μπιφτέκι Γεμιστό(Ντομάτα, Κρεμμύδι, Μαρούλι, Πίτα)</span><span>7,50€</span></div>
-<div class="item"><span>Σουβλάκι Μοσχαρίσιο(Ντομάτα, Κρεμμύδι, Μαρούλι, Πίτα)</span><span>7,50€</span></div>
-<div class="item"><span>Ισκεντέρ Κεμπάπ</span><span>6,50€</span></div>
-<div class="item"><span>Πατάτες</span><span>3,00€</span></div>
-<div class="item"><span>Κάθε αλοιφή</span><span>0,50€</span></div>
+<h2>🍽 Μερίδες / Portions</h2>
+<div class="item"><span>Γύρος Κοτόπουλο</span><span>7,00€</span></div>
+<div class="item"><span>Γύρος Μοσχαρίσιος</span><span>7,50€</span></div>
+<div class="item"><span>Πατάτες / Fries</span><span>3,00€</span></div>
 
-<h2>🕘 Τεμάχια της Ώρας</h2>
-<div class="item"><span>Σουτζουκάκια</span><span>1,00€</span></div>
-<div class="item"><span>Σουβλάκι Κοτόπουλο</span><span>1,50€</span></div>
-<div class="item"><span>Λουκάνικο</span><span>1,30€</span></div>
-<div class="item"><span>Μπιφτέκι Γεμιστό</span><span>1,80€</span></div>
-<div class="item"><span>Σουβλάκι Μοσχαρίσιο</span><span>1,80€</span></div>
- 
-<h2>🍗 Κοτόπουλο Σχάρας</h2>
-<div class="item"><span>Ολόκληρο</span><span>10,00€</span></div>
-<div class="item"><span>Μισό</span><span>5,00€</span></div>
-<div class="item"><span>Φιλέτο Στήθος</span><span>4,50€</span></div>
-<div class="item"><span>Φιλέτο Μπούτι</span><span>4,00€</span></div>
-<div class="item"><span>Συνοδεύονται με πατάτες τηγανιτές</span><span></span></div>
+<h2>🥧 Μπουγάτσες / Bougatsa</h2>
+<div class="item"><span>Κρέμα / Cream</span><span>3,00€</span></div>
+<div class="item"><span>Τυρί / Cheese</span><span>3,00€</span></div>
+<div class="item"><span>Κιμά / Meat</span><span>3,00€</span></div>
 
-<h2>🥧 Μπουγάτσες</h2>
-<div class="item"><span>Τυρί</span><span>3,00€</span></div>
-<div class="item"><span>Κιμά</span><span>3,00€</span></div>
-<div class="item"><span>Κρέμα</span><span>3,00€</span></div>
-<div class="item"><span>Κοτόπουλο</span><span>3,00€</span></div>
-<div class="item"><span>Κασέρι</span><span>3,00€</span></div>
-<div class="item"><span>Κιλό</span><span>15,00€</span></div>
+<h2>🍕 Πίτσες / Pizza</h2>
+<div class="item"><span>Special</span><span>4,50€</span></div>
+<div class="item"><span>Μαργαρίτα / Margherita</span><span>3,50€</span></div>
 
-<h2>🍕 Πίτσες</h2>
-<div class="item"><span>Ατομική Special</span><span>4,00€</span></div>
-<div class="item"><span>Μεσαία Special</span><span>7,00€</span></div>
-<div class="item"><span>Γίγας Special</span><span>12,00€</span></div>
-<div class="item"><span>Ατομική Χωριάτικη</span><span>3,50€</span></div>
-<div class="item"><span>Μεσαία Χωριάτικη</span><span>6,50€</span></div>
-<div class="item"><span>Γίγας Χωριάτικη</span><span>11,50€</span></div>
-<div class="item"><span>Ατομική Μαργαρίτα</span><span>3,00€</span></div>
-<div class="item"><span>Μεσαία Μαργαρίτα</span><span>6,00€</span></div>
-<div class="item"><span>Γίγας Μαργαρίτα</span><span>11,00€</span></div>
+<h2>🥗 Σαλάτες / Salads</h2>
+<div class="item"><span>Χωριάτικη / Greek Salad</span><span>6,00€</span></div>
+<div class="item"><span>Πράσινη / Green</span><span>4,00€</span></div>
 
-<h2>🥣 Σούπες Ημέρας</h2>
-<div class="item"><span>Κελέ Πατσά</span><span>5,00€</span></div>
-<div class="item"><span>Κοτόσουπα</span><span>4,00€</span></div>
- 
-<h2>🥗 Σαλάτες</h2>
-<div class="item"><span>Σαλάτα του Σεφ</span><span>5,00€</span></div>
-<div class="item"><span>Χωριάτικη</span><span>6,00€</span></div>
-<div class="item"><span>Πράσινη</span><span>4,00€</span></div>
-
-<h2>🍰 Γλυκά</h2>
-<div class="item"><span>Μπακλαβάς</span><span>1,20€</span></div>
+<h2>🍰 Γλυκά / Desserts</h2>
+<div class="item"><span>Μπακλαβάς / Baklava</span><span>1,20€</span></div>
 <div class="item"><span>Cheesecake</span><span>2,50€</span></div>
-<div class="item"><span>Cheesecake Lotus</span><span>2,80€</span></div>
-<div class="item"><span>Κρέμα Σοκολάτα</span><span>2,00€</span></div>
 
+<div class="qr">
 <h2>📱 QR Menu</h2>
-<img src="qr.png" style="width:150px">
+<img src="qr.png">
+</div>
 
 </div>
+
+
+<!-- Floating Call Button -->
+<a href="tel:2534024382" style="position:fixed;bottom:20px;right:20px;background:#ff7a00;color:white;padding:15px 20px;border-radius:50px;font-size:16px;font-weight:bold;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.3);z-index:999;">
+📞 Παράγγειλε τώρα
+</a>
+
 </body>
 </html>
