@@ -264,6 +264,35 @@ body.dark .icon-btn.insta {
   body.dark .header {
   background: var(--main);
 }
+  .main-title{
+  text-align:center;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.main-title h1{
+  margin:0;
+  font-size:28px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.subtitle{
+  font-size:14px;
+  opacity:0.7;
+  margin-top:3px;
+}
+
+/* μικρή γραμμή κάτω */
+.main-title::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  background: var(--main);
+  margin:8px auto 0;
+  border-radius:2px;
+}
 </style>
 
 <script>
