@@ -558,6 +558,17 @@ body {
   text-decoration:none;
   font-size:13px;
 }
+.best-sellers{
+  display:flex;
+  overflow-x:auto;
+  gap:15px;
+  padding-bottom:10px;
+}
+
+.best-sellers .card{
+  min-width:260px;
+  flex:0 0 auto;
+}
 </style>
 
 
@@ -651,8 +662,7 @@ window.onload = function(){
 
 
 <h2>⭐ Best Sellers</h2>
-
-<div class="grid">
+<div class="grid best-sellers">
 
   <div class="card">
     <img src="gyro.jpg">
