@@ -569,6 +569,44 @@ body {
   min-width:260px;
   flex:0 0 auto;
 }
+/* wrapper */
+.best-wrapper{
+  position:relative;
+}
+
+/* arrows */
+.scroll-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#ff7a00;
+  color:white;
+  border:none;
+  font-size:22px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  cursor:pointer;
+  z-index:10;
+}
+
+.scroll-btn.left{
+  left:-10px;
+}
+
+.scroll-btn.right{
+  right:-10px;
+}
+
+/* mobile hide */
+@media(max-width:768px){
+  .scroll-btn{
+    display:none;
+  }
+}
+.scroll-btn{
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
 </style>
 
 
@@ -590,6 +628,21 @@ window.onload = function(){
   if(localStorage.getItem("theme") === "dark"){
     document.body.classList.add("dark");
   }
+}
+</script>
+<script>
+function scrollLeft(){
+  document.getElementById("best").scrollBy({
+    left:-300,
+    behavior:"smooth"
+  });
+}
+
+function scrollRight(){
+  document.getElementById("best").scrollBy({
+    left:300,
+    behavior:"smooth"
+  });
 }
 </script>
 <body>
@@ -662,7 +715,12 @@ window.onload = function(){
 
 
 <h2>⭐ Best Sellers</h2>
-<div class="grid best-sellers">
+
+<div class="best-wrapper">
+
+  <button class="scroll-btn left" onclick="scrollLeft()">‹</button>
+
+  <div class="grid best-sellers" id="best">
 
   <div class="card">
     <img src="gyro.jpg">
@@ -712,6 +770,11 @@ window.onload = function(){
       <div class="price">2,80€</div>
       <a href="tel:2534024382" class="order-btn">📞 Παραγγελία</a>
     </div>
+     </div>
+
+  <button class="scroll-btn right" onclick="scrollRight()">›</button>
+
+</div>
   </div>
 
 </div>
