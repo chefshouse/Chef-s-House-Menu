@@ -32,7 +32,8 @@ body.dark{
 
 /* ================= BASE ================= */
 body{
-  font-family:Arial;
+  font-family:'Inter', sans-serif;
+}
   margin:0;
   background:var(--bg);
   color:var(--text);
@@ -339,9 +340,24 @@ body.dark .icon-btn{
 .item span:last-child{
   font-size:15px;
 }
+/* FONT UPGRADE */
+.item span:first-child{
+  font-weight:500;
+}
+
+.item span:last-child{
+  font-weight:700;
+}
+
+h2{
+  font-weight:600;
+}
+body{
+  letter-spacing:0.2px;
+}
 </style>
 
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <script>
 function toggleDark(){
