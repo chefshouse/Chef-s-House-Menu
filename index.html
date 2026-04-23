@@ -266,7 +266,7 @@ body.dark .icon-btn.insta {
 }
 
 .header.scrolled .logo {
-  height: 40px;
+  height: 32px;
 }
 
 .header.scrolled .icon-btn {
@@ -611,17 +611,27 @@ body {
   position:sticky;
   top:0;
   z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 15px;
+  background:#ff7a00;
+  transition:all 0.3s ease;
+}
+
+.logo{
+  height:60px;
   transition:0.3s;
 }
 
-/* όταν κάνεις scroll */
 .header.scrolled{
-  background:rgba(255,122,0,0.9);
+  background:rgba(255,122,0,0.85);
   backdrop-filter:blur(10px);
-  padding:5px 10px;
+  padding:6px 12px;
 }
-.header{
-  transition: all 0.3s ease;
+
+.header.scrolled .logo{
+  height:40px;
 }
 </style>
 
