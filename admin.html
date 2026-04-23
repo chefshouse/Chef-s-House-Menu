@@ -1,1 +1,30 @@
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCDJ2eFajFUldg7t3L458M6ssON2RYqwMo",
+  authDomain: "menu-admin-panel-2ad76.firebaseapp.com",
+  projectId: "menu-admin-panel-2ad76",
+  storageBucket: "menu-admin-panel-2ad76.firebasestorage.app",
+  messagingSenderId: "315806998737",
+  appId: "1:315806998737:web:cf58cfb2deb1c493a1e5f0"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.saveProduct = async function(){
+  const name = document.getElementById("name").value;
+  const price = document.getElementById("price").value;
+  const category = document.getElementById("category").value;
+
+  await addDoc(collection(db, "menu"), {
+    name,
+    price,
+    category
+  });
+
+  alert("Saved to cloud 🚀");
+};
+</script>
