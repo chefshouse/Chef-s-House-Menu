@@ -476,6 +476,88 @@ body {
   height:60%;
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+.card{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* IMAGE */
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+/* OVERLAY */
+.card::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:60%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+/* TEXT */
+.card-body{
+  position:absolute;
+  bottom:0;
+  color:white;
+  padding:12px;
+  width:100%;
+}
+
+.card-title{
+  font-weight:bold;
+  font-size:16px;
+}
+
+.price{
+  font-size:14px;
+  margin-top:3px;
+}
+
+/* BADGE */
+.badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:#ff7a00;
+  color:white;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+/* BUTTON */
+.order-btn{
+  display:inline-block;
+  margin-top:8px;
+  background:#ff7a00;
+  color:white;
+  padding:6px 12px;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:13px;
+}
 </style>
 
 
@@ -569,11 +651,39 @@ window.onload = function(){
 
 
 <h2>⭐ Best Sellers</h2>
+
 <div class="grid">
-  <div class="card"><img src="gyro.jpg"><div class="card-body"><div class="card-title">Γύρος Κοτόπουλο / Chicken Gyro</div><div>3,50€</div></div></div>
-  <div class="card"><img src="burger.jpg"><div class="card-body"><div class="card-title">Chef's Burger</div><div>6,00€</div></div></div>
-  <div class="card"><img src="bougatsa.jpg"><div class="card-body"><div class="card-title">Μπουγάτσα Κρέμα / Cream Bougatsa</div><div>3,00€</div></div></div>
-  <div class="card"><img src="freddo.jpg"><div class="card-body"><div class="card-title">Freddo Espresso</div><div>2,20€</div></div></div>
+
+  <div class="card">
+    <img src="images/gyro.jpg">
+    <div class="badge">🔥 Best Seller</div>
+    <div class="card-body">
+      <div class="card-title">Γύρος Κοτόπουλο</div>
+      <div class="price">3,50€</div>
+      <a href="tel:2534024382" class="order-btn">📞 Παραγγελία</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/burger.jpg">
+    <div class="badge">🔥 Best Seller</div>
+    <div class="card-body">
+      <div class="card-title">Chef's Burger</div>
+      <div class="price">6,00€</div>
+      <a href="tel:2534024382" class="order-btn">📞 Παραγγελία</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/bougatsa.jpg">
+    <div class="badge">🔥 Best Seller</div>
+    <div class="card-body">
+      <div class="card-title">Μπουγάτσα Κρέμα</div>
+      <div class="price">3,00€</div>
+      <a href="tel:2534024382" class="order-btn">📞 Παραγγελία</a>
+    </div>
+  </div>
+
 </div>
 
 <h2>☕ Καφέδες / Coffee</h2>
