@@ -41,7 +41,24 @@ h2{border-bottom:2px solid var(--main);padding-bottom:5px;margin-top:30px}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:10px}
 .card{border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);background:var(--bg)}
-.card img{width:100%;height:140px;object-fit:cover}
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card{
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.card-body{
+  padding:12px;
+}
+
+.card-title{
+  font-size:16px;
+}
 .card-body{padding:10px}
 .card-title{font-weight:bold}
 
@@ -429,6 +446,9 @@ body.dark .hero::after{
   --main-gradient: linear-gradient(45deg,#e65c00,#ff9a3c);
 body {
   transition: background 0.3s, color 0.3s;
+}
+.grid{
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 </style>
 
