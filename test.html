@@ -1,1 +1,853 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chef's House Full Menu</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X6SYC6TJFM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-X6SYC6TJFM');
+</script>
+
+<style>
+/* ================= ROOT ================= */
+:root{
+  --main:#ff7a00;
+  --main-gradient:linear-gradient(45deg,#ff7a00,#ffb347);
+  --bg:#ffffff;
+  --text:#000000;
+}
+
+/* ================= DARK MODE ================= */
+body.dark{
+  --bg:#121212;
+  --text:#ffffff;
+  --main:#cc5f00;
+}
+
+/* ================= BASE ================= */
+body{
+  font-family:'Inter', sans-serif;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  transition:.3s;
+}
+
+
+h1{text-align:center;margin:5px 0}
+h2{
+  border-bottom:2px solid var(--main);
+  padding-bottom:5px;
+  margin-top:30px;
+}
+
+/* ================= HEADER ================= */
+.header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 15px;
+  background:var(--main-gradient);
+  transition:all 0.3s ease;
+}
+
+.logo{
+  height:60px;
+  transition:.3s;
+}
+
+.header.scrolled{
+  padding:5px 10px;
+  backdrop-filter:blur(10px);
+  background:rgba(255,122,0,0.9);
+}
+
+.header.scrolled .logo{
+  height:36px;
+}
+
+/* ================= BUTTONS ================= */
+.actions{
+  display:flex;
+  gap:10px;
+}
+
+.icon-btn{
+  width:42px;
+  height:42px;
+  background:#fff;
+  color:var(--main);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  border:none;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.icon-btn:hover{
+  transform:scale(1.08);
+}
+
+.icon-btn.insta{
+  border:2px solid #d62976;
+  color:#d62976;
+}
+
+body.dark .icon-btn{
+  background:#1e1e1e;
+  color:#fff;
+}
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  height:180px;
+  border-radius:12px;
+  overflow:hidden;
+  margin:10px;
+  background:url('food.jpg.jpg') center/cover no-repeat;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:#fff;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* ================= TITLE ================= */
+.main-title{
+  text-align:center;
+  margin:15px 0;
+}
+
+.main-title h1{
+  font-size:32px;
+  font-weight:900;
+  background:linear-gradient(45deg,#ff7a00,#ffb347);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* ================= MENU ITEMS ================= */
+.item{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+  border-bottom:1px dashed #888;
+}
+
+.item span:last-child{
+  font-weight:bold;
+  color:var(--main);
+}
+
+/* ================= CARDS ================= */
+.card{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60%;
+  background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.card-body{
+  position:absolute;
+  bottom:0;
+  color:#fff;
+  padding:12px;
+  width:100%;
+}
+
+.badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:#ff7a00;
+  color:#fff;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+}
+
+/* ================= BEST SELLERS ================= */
+.best-sellers{
+  display:flex;
+  overflow-x:auto;
+  gap:15px;
+  padding-bottom:10px;
+}
+
+.best-sellers .card{
+  min-width:260px;
+}
+
+/* ================= ARROWS ================= */
+.best-wrapper{
+  position:relative;
+}
+
+.scroll-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#ff7a00;
+  color:#fff;
+  border:none;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.scroll-btn.left{left:-10px}
+.scroll-btn.right{right:-10px}
+
+@media(max-width:768px){
+  .scroll-btn{display:none}
+}
+
+/* ================= DELIVERY ================= */
+.delivery-box{
+  margin:15px 0;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+  background:var(--main-gradient);
+  color:#fff;
+}
+
+.delivery-list div{
+  display:flex;
+  justify-content:space-between;
+  padding:8px;
+  margin:5px 0;
+  background:rgba(255,255,255,0.15);
+  border-radius:8px;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  text-align:center;
+  padding:15px;
+  font-size:14px;
+  color:#888;
+  border-top:1px solid #ddd;
+  margin-top:30px;
+}
+.qr img{
+  width:120px;
+  max-width:100%;
+  height:auto;
+  margin-top:10px;
+}
+.order-btn{
+  display:block;
+  margin:8px auto 0;
+  background:#ff7a00;
+  color:white;
+  padding:6px 14px;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:13px;
+  width:fit-content;
+  text-align:center;
+}
+.card-body{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  color:white;
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.card-title{
+  font-weight:bold;
+  font-size:15px;
+}
+
+.price{
+  font-size:14px;
+  margin-top:2px;
+}
+.item{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+  border-bottom:1px dashed #888;
+  font-size:15px;
+  align-items:center;
+}
+
+.item span:first-child{
+  font-weight:500;
+}
+
+.item span:last-child{
+  font-weight:700;
+  color:var(--main);
+  min-width:60px;
+  text-align:right;
+}
+.item span:first-child{
+  letter-spacing:0.3px;
+}
+
+.item span:last-child{
+  font-size:15px;
+}
+/* FONT UPGRADE */
+.item span:first-child{
+  font-weight:500;
+}
+
+.item span:last-child{
+  font-weight:700;
+}
+
+h2{
+  font-weight:600;
+}
+body{
+  letter-spacing:0.2px;
+}
+/* NOTES */
+.note{
+  font-size:13px;
+  color:#666;
+  margin-top:3px;
+  margin-bottom:8px;
+  padding-left:10px;
+  border-left:3px solid var(--main);
+  opacity:0.9;
+}
+body.dark .note{
+  color:#aaa;
+  border-left:3px solid var(--main);
+}
+.note{
+  font-style:italic;
+}
+.note{
+  font-size:12px;
+  opacity:0.7;
+  margin-top:2px;
+}
+body.dark{
+  --bg:#121212;
+  --text:#ffffff;
+  --main:#cc5f00;
+  --main-gradient: linear-gradient(45deg,#cc5f00,#a94e00);
+}
+body.dark .icon-btn{
+  background:#1e1e1e;
+  color:#fff;
+}
+body.dark{
+  --main:#e66a00;
+}
+body.dark .header{
+  background: linear-gradient(45deg,#1a1a1a,#2a2a2a);
+}
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+  position:relative;
+  z-index:1;
+}
+.card-body{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  z-index:3;
+  color:#fff;
+}
+.card::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:70%;
+  background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  z-index:2;
+}
+.order-btn{
+  background:#ff7a00;
+  color:white;
+  padding:6px 14px;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:13px;
+  margin-top:6px;
+  z-index:4;
+}
+.card-title, .price{
+  text-shadow:0 2px 6px rgba(0,0,0,0.8);
+}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<script>
+function toggleDark(){
+  document.body.classList.toggle("dark");
+
+  // αποθήκευση επιλογής
+  if(document.body.classList.contains("dark")){
+    localStorage.setItem("theme","dark");
+  } else {
+    localStorage.setItem("theme","light");
+  }
+}
+
+// φόρτωση theme όταν ανοίγει το site
+window.onload = function(){
+  if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+  }
+}
+</script>
+<script>
+function scrollLeft(){
+  document.getElementById("best").scrollBy({
+    left:-300,
+    behavior:"smooth"
+  });
+}
+
+function scrollRight(){
+  document.getElementById("best").scrollBy({
+    left:300,
+    behavior:"smooth"
+  });
+}
+</script>
+<script>
+window.addEventListener("scroll", function(){
+  const header = document.querySelector(".header");
+
+  if(window.scrollY > 50){
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+</script>
+<script>
+function toggleDark(){
+  document.body.classList.toggle("dark");
+
+  if(document.body.classList.contains("dark")){
+    localStorage.setItem("theme","dark");
+  } else {
+    localStorage.setItem("theme","light");
+  }
+}
+
+window.onload = function(){
+  if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+  }
+}
+</script>
+<body>
+
+
+<header class="header">
+  <img src="logo.png" class="logo">
+
+  <div class="actions">
+
+    <!-- DARK MODE -->
+    <button onclick="toggleDark()" class="icon-btn" title="Dark Mode">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M21.64 13a1 1 0 00-1.05-.14 8 8 0 01-10.45-10.45 1 1 0 00-1.19-1.32A10 10 0 1023 14.19a1 1 0 00-1.36-1.19z"/>
+      </svg>
+    </button>
+
+    <!-- PHONE -->
+    <a href="tel:2534024382" class="icon-btn" title="Call">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.86 19.86 0 012.08 4.18 2 2 0 014.06 2h3a2 2 0 012 1.72 12.66 12.66 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.66 12.66 0 002.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+    </a>
+
+    <!-- LOCATION -->
+    <a href="https://share.google/7BI1b0BSGykwcFpsP" target="_blank" class="icon-btn" title="Location">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1114.5 9 2.5 2.5 0 0112 11.5z"/>
+      </svg>
+    </a>
+
+    <!-- INSTAGRAM -->
+    <a href="https://instagram.com/chefs.house__" target="_blank" class="icon-btn insta" title="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7.75 2C4.68 2 2 4.68 2 7.75v8.5C2 19.32 4.68 22 7.75 22h8.5C19.32 22 22 19.32 22 16.25v-8.5C22 4.68 19.32 2 16.25 2h-8.5zm0 2h8.5C18.22 4 20 5.78 20 7.75v8.5c0 1.97-1.78 3.75-3.75 3.75h-8.5C5.78 20 4 18.22 4 16.25v-8.5C4 5.78 5.78 4 7.75 4zm8.75 1.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
+      </svg>
+    </a>
+
+  </div>
+</header>
+
+
+<div class="container">
+<div class="hero">
+  <div class="hero-content">
+    <h1>Chef’s House</h1>
+    <div class="subtitle">🍽️ Μενού / Menu</div>
+  </div>
+</div>
+
+  
+</div>
+<div class="delivery-box">
+  <div class="delivery-title">🛵 Delivery</div>
+
+  <div class="delivery-hours">
+    ⏰ 12:00 – 22:30
+  </div>
+
+  <div class="delivery-min">
+    💰 Ελάχιστη Παραγγελία
+  </div>
+
+  <div class="delivery-list">
+    <div>📍 Εντός Κοπτερού <span>5€</span></div>
+    <div>📍 1km – 5km <span>15€</span></div>
+    <div>📍 5km – 15km <span>25€</span></div>
+  </div>
+</div>
+
+
+<h2>⭐ Best Sellers</h2>
+
+<div class="best-wrapper">
+
+  <button class="scroll-btn left" onclick="scrollLeft()">‹</button>
+
+  <div class="grid best-sellers" id="best">
+
+  <div class="card">
+    <img src="gyro.jpg">
+    <div class="badge">🔥 Best Seller</div>
+    <div class="card-body">
+      <div class="card-title">Γύρος Κοτόπουλο</div>
+      <div class="price">3,50€</div>
+      <a href="tel:2534024382" class="order-btn">📞 Παραγγελία</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="burger.jpg">
+    <div class="badge">🔥 Best Seller</div>
+    <div class="card-body">
+      <div class="card-title">Chef's Burger</div>
+      <div class="price">6,00€</div>
+      <a href="tel:2534024382" class="order-btn">📞 Παραγγελία</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="bougatsa.jpg">
+    <div class="badge">🔥 Best Seller</div>
+    <div class="card-body">
+      <div class="card-title">Μπουγάτσα Κρέμα</div>
+      <div class="price">3,00€</div>
+      <a href="tel:2534024382" class="order-btn">📞 Παραγγελία</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="freddo.jpg">
+    <div class="badge">🔥 Best Seller</div>
+    <div class="card-body">
+      <div class="card-title">Freddo Espresso</div>
+      <div class="price">2,20€</div>
+      <a href="tel:2534024382" class="order-btn">📞 Παραγγελία</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="lahmacun.jpg">
+    <div class="badge">🔥 Best Seller</div>
+    <div class="card-body">
+      <div class="card-title">Λαχματζούν</div>
+      <div class="price">2,80€</div>
+      <a href="tel:2534024382" class="order-btn">📞 Παραγγελία</a>
+    </div>
+     </div>
+
+  <button class="scroll-btn right" onclick="scrollRight()">›</button>
+
+</div>
+  </div>
+
+</div>
+</div>
+
+<h2>☕ Καφέδες / Coffee</h2>
+<div class="item"><span>Ελληνικός (Μόνος) / Greek Coffee Single</span><span>1,00€</span></div>
+<div class="item"><span>Ελληνικός (Διπλός) / Double Greek</span><span>1,80€</span></div>
+<div class="item"><span>Φραπέ / Nescafe</span><span>2,00€</span></div>
+<div class="item"><span>Εσπρέσο (Μονός) / Espresso</span><span>1,80€</span></div>
+<div class="item"><span>Εσπρέσο (Διπλός) / Double Espresso</span><span>2,20€</span></div>
+<div class="item"><span>Αμερικάνο / Americano</span><span>1,80€</span></div>
+<div class="item"><span>Freddo Espresso</span><span>2,20€</span></div>
+<div class="item"><span>Cappuccino</span><span>2,20€</span></div>
+<div class="item"><span>Cappuccino Διπλός / Double Cappuccino</span><span>2,70€</span></div>
+<div class="item"><span>Freddo Cappuccino</span><span>2,40€</span></div>
+<div class="item"><span>Iced Latte</span><span>2,70€</span></div>
+<div class="item"><span>Extra δόση / Extra shot</span><span>+0,50€</span></div>
+<div class="item"><span>Σαντιγύ / Whipped Cream</span><span>+0,50€</span></div>
+
+<h2>🍫 Ροφήματα / Beverages</h2>
+<div class="item"><span>Ζεστή Σοκολάτα / Hot Chocolate</span><span>2,20€</span></div>
+<div class="item"><span>Κρύα Σοκολάτα / Cold Chocolate</span><span>2,20€</span></div>
+<div class="item"><span>Mochachino</span><span>2,70€</span></div>
+<div class="item"><span>Τσάι / Tea</span><span>1,00€</span></div>
+
+<h2>🥛 Γάλατα & Κακάο / Milk & Cocoa</h2>
+<div class="item"><span>Κακάο 250ml</span><span>1,00€</span></div>
+<div class="item"><span>Κακάο 500ml</span><span>1,50€</span></div>
+<div class="item"><span>Κακάο Zero</span><span>1,20€</span></div>
+
+<h2>🥤 Αναψυκτικά / Soft Drinks<iki/h2>
+<div class="item"><span>Coca-Cola</span><span>1,50€</span></div>
+<div class="item"><span>Coca-Cola Zero</span><span>1,50€</span></div>
+<div class="item"><span>Fanta(Orangade, Crimson Cherry)</span><span>1,50€</span></div>
+<div class="item"><span>Sprite</span><span>1,50€</span></div>
+<div class="item"><span>Schweppes</span><span>1,50€</span></div>
+<div class="item"><span>Lipton Ice Tea</span><span>1,50€</span></div>
+<div class="item"><span>XIXO Ice Tea(Φράουλα, Λεμόνι, Ροδάκινο)</span><span>1,00€</span></div>
+<div class="item"><span>Σουρωτή 330ml</span><span>1,20€</span></div>
+<div class="item"><span>Σουρωτή με Λεμόνι 330ml</span><span>1,50€</span></div>
+<div class="item"><span>Νερό 0,5L</span><span>0,50€</span></div>
+<div class="item"><span>Νερό 1L</span><span>1,00€</span></div>
+
+<h2>🍹 Χυμοί / Juices</h2>
+<div class="item"><span>Amita</span><span>1,50€</span></div>
+<div class="item"><span>Motion</span><span>1,80€</span></div>
+<div class="item"><span>Φυσικός Πορτοκάλι / Fresh Orange</span><span>1,80€</span></div>
+
+<h2>🍺 Μπύρες / Beers</h2>
+<div class="item"><span>Corona</span><span>2,80€</span></div>
+<div class="item"><span>ΑΛΦΑ 330ml</span><span>1,50€</span></div>
+<div class="item"><span>ΑΛΦΑ 500ml</span><span>2,50€</span></div>
+<div class="item"><span>Vergina 330ml</span><span>1,20€</span></div>
+<div class="item"><span>Vergina 500ml</span><span>2,20€</span></div>
+<div class="item"><span>Heineken 330ml</span><span>1,80€</span></div>
+<div class="item"><span>Heineken 500ml</span><span>2,80€</span></div>
+<div class="item"><span>Amstel 330ml</span><span>1,50€</span></div>
+<div class="item"><span>Amstel 500ml</span><span>2,50€</span></div>
+
+<h2>🍷 Οίνοι / Wines</h2>
+<div class="item"><span>Τσίπουρο Χύμα 200ml</span><span>4,00€</span></div>
+<div class="item"><span>Τσίπουρο Ηδωνικό 200ml</span><span>8,00€</span></div>
+<div class="item"><span>Τσίπουρο Εωθινον 200ml</span><span>7,50€</span></div>
+<div class="item"><span>Τσίπουρο Εβρίτικο 200ml</span><span>7,50€</span></div>
+<div class="item"><span>Τσίπουρο Αποστολάκη 200ml</span><span>7,50€</span></div>
+<div class="item"><span>Λευκό Κρασί / White Wine 500ml</span><span>5,00€</span></div>
+<div class="item"><span>Ερυθρό / Red Wine 500ml</span><span>5,00€</span></div>
+<div class="item"><span>Ροζέ / Rosé Wine 500ml</span><span>5,00€</span></div>
+<div class="item"><span>Κρασί Χύμα / Bulk Wine 200ml</span><span>2,00€</span></div>
+<div class="item"><span>Ρετσίνα</span><span>2,50€</span></div>
+
+<h2>🌯 Τυλιχτά / Wraps</h2>
+<div class="item"><span>Τόστ Τυρί</span><span>2,00€</span></div>
+<div class="item"><span>Τόστ Τυρί-Σαλάμι</span><span>2,50€</span></div>
+<div class="item"><span>Γύρος Κοτόπουλο</span><span>3,50€</span></div>
+<div class="item"><span>Γύρος Μοσχαρίσιος</span><span>3,80€</span></div>
+<div class="item"><span>Σουτζουκάκια</span><span>3,80€</span></div>
+<div class="item"><span>Σουβλάκι Κοτόπουλο</span><span>3,50€</span></div>
+<div class="item"><span>Λουκάνικο</span><span>3,50€</span></div>
+<div class="item"><span>Μπιφτέκι Γεμιστό</span><span>4,00€</span></div>
+<div class="item"><span>Σουβλάκι Μοσχαρίσιο</span><span>4,00€</span></div>
+<div class="note">Αλοιφή / Sauce +0,20€</div>
+
+<h2>🌯 Λαχματζούν / Lahmacun</h2>
+<div class="item"><span>Γύρος Κοτόπουλο / Chicken Gyro</span><span>4,00€</span></div>
+<div class="item"><span>Γύρος Μοσχαρίσιος / Beef Gyro</span><span>4,50€</span></div>
+<div class="item"><span>Με ντομάτα, κρεμμύδι, μαρούλι / With tomato, onion, lettuce</span><span>2,80€</span></div>
+<div class="note">Αλοιφή / Sauce +0,20€</div>
+
+<h2>🌮 Σκεπαστές</h2>
+<div class="item"><span>Γύρος Κοτόπουλο</span><span>6,00€</span></div>
+<div class="item"><span>Γύρος Μοσχαρίσιος</span><span>6,50€</span></div>
+<div class="item"><span>Σουτζουκάκια</span><span>6,50€</span></div>
+<div class="item"><span>Σουβλάκι Κοτόπουλο</span><span>6,00€</span></div>
+<div class="item"><span>Λουκάνικο</span><span>6,00€</span></div>
+<div class="note">Αλοιφή / Sauce +0,20€</div>
+<div class="note">Με πατάτες / With fries</div>
+
+<h2>🥙 Πίτα Κλαμπ / Pita Club</h2>
+<div class="item"><span>Γύρος Κοτόπουλο / Chicken Gyro</span><span>7,50€</span></div>
+<div class="item"><span>Γύρος Μοσχαρίσιος / Beef Gyro</span><span>8,00€</span></div>
+<div class="item"><span>Σουτζουκάκια</span><span>8,00€</span></div>
+<div class="item"><span>Σουβλάκι Κοτόπουλο / Chicken Souvlaki</span><span>7,50€</span></div>
+<div class="item"><span>Λουκάνικο / Sausage</span><span>7,50€</span></div>
+<div class="note">Με Ντομάτα, Μαρούλι, Μαγιονέζα / With Tomato, Lettuce, Mayonnaise</div>
+<div class="note">Με πατάτες / With fries</div>
+<div class="note">Αλοιφή / Sauce +0,20€</div>
+
+<h2>🍔 Burger</h2>
+<div class="item"><span>Hamburger</span><span>4,50€</span></div>
+<div class="item"><span>Cheeseburger</span><span>5,00€</span></div>
+<div class="item"><span>Chef's Burger</span><span>6,00€</span></div>
+<div class="note">Με πατάτες και κέτσαπ / With fries and Ketchup</div>
+
+<h2>🥪 Club Sandwich</h2>
+<div class="item"><span>Γαλοπούλα</span><span>4,00€</span></div>
+<div class="item"><span>Κοτόπουλο</span><span>4,50€</span></div>
+<div class="note">Με πατάτες / With fries</div>
+
+<h2>🍽 Μερίδες</h2>
+<div class="item"><span>Γύρος Κοτόπουλο</span><span>7,00€</span></div>
+<div class="item"><span>Γύρος Μοσχαρίσιος</span><span>7,50€</span></div>
+<div class="item"><span>Σουτζουκάκια</span><span>7,00€</span></div>
+<div class="item"><span>Σουβλάκι Κοτόπουλο</span><span>7,00€</span></div>
+<div class="item"><span>Λουκάνικο</span><span>7,00€</span></div>
+<div class="item"><span>Μπιφτέκι</span><span>7,50€</span></div>
+<div class="item"><span>Πατάτες</span><span>3,00€</span></div>
+<div class="note">Με πατάτες, Πίτα, Ντομάτα, Μαρούλι, Κρεμμύδι / With fries, Pita, Tomato, Onion, Letuce</div>
+<div class="note">Αλοιφή / Sauce +0,50€</div>
+
+<h2>🕖 Τεμάχια της Ώρας</h2>
+<div class="item"><span>Σουτζουκάκια</span><span>1,00€</span></div>
+<div class="item"><span>Σουβλάκι Κοτόπουλο</span><span>1,50€</span></div>
+<div class="item"><span>Λουκάνικο</span><span>1,30€</span></div>
+<div class="item"><span>Μπιφτέκι Μοσχαρίσιο</span><span>2,00€</span></div>
+<div class="item"><span>Σουβλάκι Μοσχαρίσιο</span><span>1,70€</span></div>
+<div class="item"><span>Κεμπάπ</span><span>1,50€</span></div>
+
+<h2>🍗 Κοτόπουλο Σχάρας / Chicken Grill</h2>
+<div class="item"><span>Ολόκληρο Κοτόπουλο</span><span>10,00€</span></div>
+<div class="item"><span>Μισό Κοτόπουλο</span><span>5,00€</span></div>
+<div class="item"><span>Φιλέτο Στήθος Κοτόπουλο</span><span>4,50€</span></div>
+<div class="item"><span>Φιλέτο Μπούτι Κοτόπουλο</span><span>4,00€</span></div>
+<div class="note">Με πατάτες / With fries</div>
+
+<h2>🫓 Μπουγάτσες</h2>
+<div class="item"><span>Τυρί</span><span>3,00€</span></div>
+<div class="item"><span>Κιμά</span><span>3,00€</span></div>
+<div class="item"><span>Κρέμα</span><span>3,00€</span></div>
+<div class="item"><span>Κοτόπουλο</span><span>3,00€</span></div>
+<div class="item"><span>Κασέρι</span><span>3,00€</span></div>
+
+<h2>🍕 Πίτσες / Pizza</h2>
+<div class="item"><span>Ατομική Special / Personal Special</span><span>4,00€</span></div>
+<div class="item"><span>Μεσαία Special / Medium Special</span><span>8,00€</span></div>
+<div class="item"><span>Γίγας Special / Large Special</span><span>13,00€</span></div>
+<div class="item"><span>Ατομική Χωριάτικη / Personal Greek</span><span>3,50€</span></div>
+<div class="item"><span>Μεσαία Χωριάτικη / Medium Greek</span><span>7,50€</span></div>
+<div class="item"><span>Γίγας Χωριάτικη / Large Greek</span><span>12,50€</span></div>
+<div class="item"><span>Ατομική Μαργαρίτα / Personal Margherita</span><span>3,00€</span></div>
+<div class="item"><span>Μεσαία Μαργαρίτα / Medium Margherita</span><span>7,00€</span></div>
+<div class="item"><span>Γίγας Μαργαρίτα / Large Margherita</span><span>12,00€</span></div>
+
+<h2>🍜 Σούπες / Soups</h2>
+<div class="item"><span>Κελέ Πατσά</span><span>6,00€</span></div>
+<div class="item"><span>Κοτόσουπα</span><span>5,00€</span></div>
+
+<h2>🥗 Σαλάτες</h2>
+<div class="item"><span>Chef's</span><span>5,00€</span></div>
+<div class="item"><span>Χωριάτικη</span><span>6,00€</span></div>
+<div class="item"><span>Πράσινη</span><span>4,00€</span></div>
+
+<h2>🍰 Γλυκά</h2>
+<div class="item"><span>Κρύος Μπακλαβάς(Το Κομμάτι)</span><span>1,20€</span></div>
+<div class="item"><span>Cheesecake</span><span>2,50€</span></div>
+<div class="item"><span>Cheesecake Lotus</span><span>2,80€</span></div>
+<div class="item"><span>Κρέμα Σοκολάτα</span><span>2,00€</span></div>
+<div class="item"><span>Donuts ΣΟΚΟΛΑΤΑ</span><span>1,00€</span></div>
+
+<h2>🍟 Snacks</h2>
+<div class="item"><span>Jumbo Πατατάκια(BBQ, Sweet Chili, Oregano, Sea Salted)</span><span>1,50€</span></div>
+<div class="item"><span>Jumbo ΓΑΡΙΔΑΡΕΣ</span><span>1,50€</span></div>
+<div class="item"><span>Jumbo ΦΥΣΤΙΚΟΜΠΑΛΕΣ</span><span>1,50€</span></div>
+<div class="item"><span>Jumbo ΒΡΥΚΟΛΕΣ</span><span>1,50€</span></div>
+<div class="item"><span>Kinder BUENO</span><span>1,50€</span></div>
+<div class="item"><span>KIMIS ΑΜΥΓΔΑΛΟ</span><span>1,80€</span></div>
+<div class="item"><span>KIMIS ΚΑΣΙΟΥΣ</span><span>1,80€</span></div>
+<div class="item"><span>KIMIS ΦΟΥΝΤΟΥΚΙ</span><span>1,80€</span></div>
+<div class="item"><span>KIMIS ΑΙΓΙΝΗΣ</span><span>1,80€</span></div>
+<div class="item"><span>KIMIS ΚΙΚΙΡΙΚΙ</span><span>1,00€</span></div>
+<div class="item"><span>KIMIS ΦΥΣΤΙΚΙΑ ΠΙΝΑΤΣ </span><span>1,20€</span></div>
+<div class="item"><span>KIMIS ΗΛΙΟΣΠΟΡΑ</span><span>0,60€</span></div>
+<div class="item"><span>KIMIS ΚΟΛΟΚΥΘΟΣΠΟΡΟΣ</span><span>0,70€</span></div>
+
+<div class="qr">
+<h2>📱 QR Menu</h2>
+<img src="qr.png">
+</div>
+
+</div>
+
+
+<!-- Floating Call Button -->
+<a href="tel:2534024382" style="position:fixed;bottom:20px;right:20px;background:#ff7a00;color:white;padding:15px 20px;border-radius:50px;font-size:16px;font-weight:bold;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.3);z-index:999;">
+📞 Παράγγειλε τώρα
+</a>
+
+  <!-- sayfanın diğer içerikleri -->
+
+  <footer class="footer">
+    <p>© 2026 Chef’s House. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
+</body>
+</html>
