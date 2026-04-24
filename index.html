@@ -215,16 +215,31 @@ body.dark .icon-btn{
 .best-sellers{
 display:flex;
 overflow-x:auto;
-gap:15px;
-padding:10px 5px 20px;
+gap:18px;
+padding:15px 10px 25px;
 scroll-snap-type:x mandatory;
+scroll-behavior:smooth;
+-webkit-overflow-scrolling:touch;
+}
+
+.best-sellers::-webkit-scrollbar{
+display:none;
 }
 
 .best-sellers .card{
-flex:0 0 280px;
-min-width:280px;
+flex:0 0 78%;
+max-width:320px;
 height:360px;
-scroll-snap-align:start;
+border-radius:22px;
+overflow:hidden;
+position:relative;
+scroll-snap-align:center;
+transition:.35s;
+box-shadow:0 8px 25px rgba(0,0,0,.20);
+}
+
+.best-sellers .card:hover{
+transform:scale(1.03);
 }
 
 .best-sellers .card img{
@@ -234,13 +249,57 @@ object-fit:cover;
 display:block;
 }
 
+/* cinematic overlay */
+.best-sellers .card::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:60%;
+background:linear-gradient(to top,
+rgba(0,0,0,.85),
+transparent);
+z-index:1;
+}
+
 .card-body{
 position:absolute;
 bottom:0;
-left:0;
+z-index:2;
 width:100%;
+padding:18px;
+text-align:center;
+color:#fff;
+}
+
+.card-title{
+font-size:22px;
+font-weight:700;
+margin-bottom:6px;
+}
+
+.price{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.order-btn{
+display:inline-block;
+padding:10px 22px;
+border-radius:30px;
+background:#ff7a00;
+color:#fff;
+text-decoration:none;
+font-weight:600;
+}
+
+/* badge */
+.badge{
+position:absolute;
+top:14px;
+left:14px;
 z-index:3;
-padding:15px;
 }
 
 /* ================= ARROWS ================= */
@@ -521,6 +580,40 @@ window.onload = function(){
     document.body.classList.add("dark");
   }
 }
+</script>
+<script>
+const slider = document.getElementById("best");
+
+let autoSlide = setInterval(()=>{
+slider.scrollBy({
+left:320,
+behavior:"smooth"
+});
+
+/* όταν φτάνει τέλος γυρίζει αρχή */
+if(
+slider.scrollLeft + slider.clientWidth 
+>= slider.scrollWidth - 50
+){
+setTimeout(()=>{
+slider.scrollTo({
+left:0,
+behavior:"smooth"
+});
+},1500);
+}
+
+},3500);
+
+
+/* pause όταν αγγίζει ο χρήστης */
+slider.addEventListener("touchstart",()=>{
+clearInterval(autoSlide);
+});
+
+slider.addEventListener("mouseenter",()=>{
+clearInterval(autoSlide);
+});
 </script>
 <body>
 
