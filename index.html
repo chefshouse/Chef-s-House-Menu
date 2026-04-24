@@ -640,38 +640,19 @@ window.onload = function(){
 }
 </script>
 <script>
-const slider = document.getElementById("best");
-
-let autoSlide = setInterval(()=>{
-slider.scrollBy({
-left:320,
+function slideRight(){
+document.getElementById("best").scrollBy({
+left:300,
 behavior:"smooth"
 });
-
-/* όταν φτάνει τέλος γυρίζει αρχή */
-if(
-slider.scrollLeft + slider.clientWidth 
->= slider.scrollWidth - 50
-){
-setTimeout(()=>{
-slider.scrollTo({
-left:0,
-behavior:"smooth"
-});
-},1500);
 }
 
-},3500);
-
-
-/* pause όταν αγγίζει ο χρήστης */
-slider.addEventListener("touchstart",()=>{
-clearInterval(autoSlide);
+function slideLeft(){
+document.getElementById("best").scrollBy({
+left:-300,
+behavior:"smooth"
 });
-
-slider.addEventListener("mouseenter",()=>{
-clearInterval(autoSlide);
-});
+}
 </script>
 <script>
 function slideRight(){
