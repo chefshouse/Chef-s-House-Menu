@@ -478,13 +478,21 @@ padding:10px 45px;
 .best-sellers{
 display:flex;
 gap:18px;
-overflow:hidden;
+overflow-x:auto;
+overflow-y:hidden;
 scroll-behavior:smooth;
+-webkit-overflow-scrolling:touch;
+}
+
+.best-sellers::-webkit-scrollbar{
+display:none;
 }
 
 .best-sellers .card{
-flex:0 0 280px;
-height:360px;
+flex:0 0 260px;
+min-width:260px;
+height:340px;
+}
 border-radius:22px;
 overflow:hidden;
 box-shadow:0 8px 22px rgba(0,0,0,.2);
