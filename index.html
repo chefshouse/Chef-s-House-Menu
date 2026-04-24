@@ -519,6 +519,60 @@ body.dark .header{
 text-align:center;
 margin-top:10px;
 }
+.slider-wrap{
+position:relative;
+padding:10px 45px;
+}
+
+.best-sellers{
+display:flex;
+gap:18px;
+overflow:hidden;
+scroll-behavior:smooth;
+}
+
+.best-sellers .card{
+flex:0 0 280px;
+height:360px;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 8px 22px rgba(0,0,0,.2);
+}
+
+/* arrows */
+.nav{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:46px;
+height:46px;
+border:none;
+border-radius:50%;
+background:#ff7a00;
+color:white;
+font-size:22px;
+cursor:pointer;
+z-index:10;
+box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+
+.prev{
+left:0;
+}
+
+.next{
+right:0;
+}
+
+.nav:hover{
+transform:translateY(-50%) scale(1.08);
+}
+
+@media(max-width:768px){
+.nav{
+display:none;
+}
+}
 </style>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -619,6 +673,21 @@ slider.addEventListener("mouseenter",()=>{
 clearInterval(autoSlide);
 });
 </script>
+<script>
+function slideRight(){
+document.getElementById("best").scrollBy({
+left:320,
+behavior:"smooth"
+});
+}
+
+function slideLeft(){
+document.getElementById("best").scrollBy({
+left:-320,
+behavior:"smooth"
+});
+}
+</script>
 <body>
 
 
@@ -690,11 +759,15 @@ clearInterval(autoSlide);
 
 <h2>⭐ Best Sellers</h2>
 
+<div class="slider-wrap">
+
+<button class="nav prev" onclick="slideLeft()">❮</button>
+
 <div class="best-sellers" id="best">
 
-  <button class="scroll-btn left" onclick="scrollLeft()">‹</button>
+<!-- cards σου εδώ -->
 
-  <div class="grid best-sellers" id="best">
+
 
   <div class="card">
     <img src="gyro.jpg">
@@ -755,6 +828,11 @@ clearInterval(autoSlide);
       <a href="tel:2534024382" class="order-btn">📞 Παραγγελία</a>
     </div>
      </div>
+    </div>
+
+<button class="nav next" onclick="slideRight()">❯</button>
+
+</div>
 
   <button class="scroll-btn right" onclick="scrollRight()">›</button>
 
