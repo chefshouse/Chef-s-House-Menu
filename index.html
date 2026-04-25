@@ -557,6 +557,28 @@ padding-bottom:10px;
 border-bottom:3px solid var(--main);
 display:inline-block;
 }
+.ingredients{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:8px 0 12px;
+}
+
+.ingredients span{
+background:#fff7ef;
+border:1px solid rgba(255,122,0,.25);
+padding:6px 10px;
+border-radius:20px;
+font-size:12px;
+font-weight:500;
+color:#555;
+}
+
+body.dark .ingredients span{
+background:#1e1e1e;
+border-color:#444;
+color:#ddd;
+}
 </style>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -915,8 +937,12 @@ behavior:"smooth"
 <span>Hamburger</span>
 <span>4,50€</span>
 </div>
-<div class="note">
-🥩 100% μοσχαρίσιο μπιφτέκι • 🍅 ντομάτα • 🧅 κρεμμύδι • ketchup • mustard
+<div class="ingredients">
+  <span>🥩 100% μοσχαρίσιο μπιφτέκι</span>
+  <span>🍅 Ντομάτα</span>
+  <span>🧅 Κρεμμύδι</span>
+  <span>Ketchup</span>
+  <span>Mustard</span>
 </div>
 
 
