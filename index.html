@@ -587,6 +587,60 @@ color:#ffb067;
 background:#ff7a00;
 color:white;
 }
+.menu-product{
+margin:24px 0 34px;
+}
+
+.product-head{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-bottom:8px;
+border-bottom:1px dashed #bbb;
+}
+
+.product-name{
+font-size:25px;
+font-weight:700;
+}
+
+.product-price{
+font-size:24px;
+font-weight:700;
+color:var(--main);
+}
+
+.ingredients{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:12px;
+}
+
+.ingredients span{
+background:#fff4e8;
+border:1px solid #ffd0a3;
+padding:7px 12px;
+border-radius:22px;
+font-size:12px;
+font-weight:600;
+color:#cc5f00;
+}
+
+.included{
+margin-top:12px;
+font-size:13px;
+font-weight:600;
+color:#666;
+}
+
+/* featured burger */
+.signature{
+padding:14px;
+border-radius:18px;
+background:rgba(255,122,0,.05);
+border:2px solid rgba(255,122,0,.15);
+}
 </style>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -941,41 +995,60 @@ behavior:"smooth"
 
 <h2>🍔 Burgers</h2>
 
-<div class="item">
-<span>Hamburger</span>
-<span>4,50€</span>
+
+<div class="menu-product">
+
+<div class="product-head">
+<span class="product-name">Hamburger</span>
+<span class="product-price">4,50€</span>
 </div>
+
 <div class="ingredients">
 <span>🥩 100% μοσχαρίσιο</span>
 <span>🍅 ντομάτα</span>
 <span>🧅 κρεμμύδι</span>
 <span>κέτσαπ</span>
 <span>μουστάρδα</span>
-<span>🍟 Συνοδεύεται με πατάτες</span>
-<span>🍅 κέτσαπ</span>
+</div>
+
+<div class="included">
+🍟 Συνοδεύεται με πατάτες & κέτσαπ
+</div>
+
 </div>
 
 
-<div class="item">
-<span>Cheeseburger</span>
-<span>5,00€</span>
+
+<div class="menu-product">
+
+<div class="product-head">
+<span class="product-name">Cheeseburger</span>
+<span class="product-price">5,00€</span>
 </div>
 
 <div class="ingredients">
-<span>🥩 100% μοσχαρίσιο</span>
+<span>🥩 μοσχαρίσιο</span>
 <span>🧀 cheddar</span>
 <span>🥒 πίκλες</span>
 <span>Chef’s Sauce</span>
-<span>κέτσαπ</span>
-<span>μουστάρδα</span>
-<span>🍟 Συνοδεύεται με πατάτες</span>
-<span>🍅 κέτσαπ</span>
+</div>
+
+<div class="included">
+🍟 Συνοδεύεται με πατάτες & κέτσαπ
+</div>
+
 </div>
 
 
-<div class="item">
-<span>Chef’s Burger 👨‍🍳</span>
-<span>6,00€</span>
+
+<div class="menu-product signature">
+
+<div class="product-head">
+<span class="product-name">
+Chef’s Burger 👨‍🍳 Signature
+</span>
+
+<span class="product-price">6,00€</span>
 </div>
 
 <div class="ingredients">
@@ -985,11 +1058,14 @@ behavior:"smooth"
 <span>🥒 πίκλες</span>
 <span>🍅 ντομάτα</span>
 <span>🥬 μαρούλι</span>
-<span>Chef’s Sauce</span>
 <span>BBQ sauce</span>
-<span>🍟Συνοδεύεται με πατάτες</span>
-<span>🍅 κέτσαπ</span>
 </div>
+
+<div class="included">
+🍟 Συνοδεύεται με πατάτες & κέτσαπ
+</div>
+
+
 
 <h2>🥪 Club Sandwiches</h2>
 
