@@ -560,23 +560,32 @@ display:inline-block;
 display:flex;
 flex-wrap:wrap;
 gap:8px;
-margin:8px 0 12px;
+margin:10px 0 14px;
 }
 
 .ingredients span{
-background:#fff7ef;
-border:1px solid rgba(255,122,0,.25);
-padding:6px 10px;
-border-radius:20px;
+background:linear-gradient(45deg,#fff4e8,#ffe7cc);
+border:1px solid rgba(255,122,0,.35);
+padding:7px 12px;
+border-radius:30px;
 font-size:12px;
-font-weight:500;
-color:#555;
+font-weight:600;
+color:#cc5f00;
+box-shadow:0 2px 6px rgba(255,122,0,.10);
+transition:.2s;
 }
 
+.ingredients span:hover{
+transform:translateY(-1px);
+}
 body.dark .ingredients span{
-background:#1e1e1e;
-border-color:#444;
-color:#ddd;
+background:rgba(255,122,0,.14);
+border:1px solid rgba(255,122,0,.35);
+color:#ffb067;
+}
+.ingredients span:last-child{
+background:#ff7a00;
+color:white;
 }
 </style>
 
@@ -937,11 +946,13 @@ behavior:"smooth"
 <span>4,50€</span>
 </div>
 <div class="ingredients">
-  <span>🥩 100% μοσχαρίσιο μπιφτέκι</span>
-  <span>🍅 Ντομάτα</span>
-  <span>🧅 Κρεμμύδι</span>
-  <span>Ketchup</span>
-  <span>Mustard</span>
+<span>🥩 100% μοσχαρίσιο</span>
+<span>🍅 ντομάτα</span>
+<span>🧅 κρεμμύδι</span>
+<span>κέτσαπ</span>
+<span>μουστάρδα</span>
+<span>🍟 Συνοδεύεται με πατάτες</span>
+<span>🍅 κέτσαπ</span>
 </div>
 
 
@@ -949,19 +960,36 @@ behavior:"smooth"
 <span>Cheeseburger</span>
 <span>5,00€</span>
 </div>
-<div class="note">
-🥩 100% μοσχαρίσιο μπιφτέκι • 🧀 cheddar • 🥒 πίκλες • Chef’s sauce • ketchup • mustard
+
+<div class="ingredients">
+<span>🥩 100% μοσχαρίσιο</span>
+<span>🧀 cheddar</span>
+<span>🥒 πίκλες</span>
+<span>Chef’s Sauce</span>
+<span>κέτσαπ</span>
+<span>μουστάρδα</span>
+<span>🍟 Συνοδεύεται με πατάτες</span>
+<span>🍅 κέτσαπ</span>
 </div>
 
 
 <div class="item">
-<span>Chef’s Burger</span>
+<span>Chef’s Burger 👨‍🍳</span>
 <span>6,00€</span>
 </div>
-<div class="note">
-🥩 100% μοσχαρίσιο μπιφτέκι • 🧀 διπλό cheddar • 🧅 καραμελωμένα κρεμμύδια • 🥒 πίκλες • 🍅 ντομάτα • 🥬 μαρούλι • Chef’s sauce • BBQ sauce
+
+<div class="ingredients">
+<span>🥩 μοσχαρίσιο μπιφτέκι</span>
+<span>🧀 διπλό cheddar</span>
+<span>🧅 καραμελωμένα κρεμμύδια</span>
+<span>🥒 πίκλες</span>
+<span>🍅 ντομάτα</span>
+<span>🥬 μαρούλι</span>
+<span>Chef’s Sauce</span>
+<span>BBQ sauce</span>
+<span>🍟Συνοδεύεται με πατάτες</span>
+<span>🍅 κέτσαπ</span>
 </div>
-<div class="note">Με πατάτες και κέτσαπ / With fries and Ketchup</div>
 
 <h2>🥪 Club Sandwiches</h2>
 
