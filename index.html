@@ -532,6 +532,23 @@ transform:translateY(-50%) scale(1.08);
 display:none;
 }
 }
+.menu-info{
+margin-top:14px;
+padding:14px;
+border-radius:14px;
+background:rgba(255,122,0,.08);
+border-left:4px solid var(--main);
+display:flex;
+flex-direction:column;
+gap:8px;
+font-size:13px;
+line-height:1.5;
+font-weight:500;
+}
+
+body.dark .menu-info{
+background:rgba(255,122,0,.12);
+}
 </style>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -857,14 +874,19 @@ behavior:"smooth"
 <div class="note">Αλοιφή / Sauce +0,20€</div>
 
 <h2>🌮 Σκεπαστές</h2>
+
 <div class="item"><span>Γύρος Κοτόπουλο</span><span>6,00€</span></div>
 <div class="item"><span>Γύρος Μοσχαρίσιος</span><span>6,50€</span></div>
 <div class="item"><span>Σουτζουκάκια</span><span>6,50€</span></div>
 <div class="item"><span>Σουβλάκι Κοτόπουλο</span><span>6,00€</span></div>
 <div class="item"><span>Λουκάνικο</span><span>6,00€</span></div>
-<div class="note">Αλοιφή / Sauce +0,20€</div>
-<div class="note">Με πατάτες / With fries</div>
-<div class="note">Με ντομάτα, μαρούλι, Chef's Sauce / With tomato, lettuce, Chef's Sauce</div>
+
+<div class="menu-info">
+  <div>🍅 Με ντομάτα, μαρούλι & Chef’s Sauce</div>
+  <div>🥣 Extra αλοιφή +0,20€</div>
+  <div>🍟 Όλες συνοδεύονται με πατάτες</div>
+</div>
+
 
 <h2>🥙 Πίτα Κλαμπ / Pita Club</h2>
 <div class="item"><span>Γύρος Κοτόπουλο / Chicken Gyro</span><span>7,50€</span></div>
